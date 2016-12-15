@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<CarLine>       
+<int name="carID" value="556" />
+<int name="atsafe" value="512" />
+<int name="dotNum" value="800" />
+<int name="midLineY1" value="500" />
+<int name="midLineY2" value="400" />
+<int name="midLineY3" value="300" />
+<int name="TrackMode" value="2" />
+<int name="high" value="1160" />
+<int name="Vision" value="141" />
+<int name="mMinY" value="0" />
+<int name="mMaxY" value="600" />
+<int name="mNumF" value="324" />
+<double name="Pu" value="-0.0" />
+<double name="Pv" value="-0.74" />
+<double name="Lcar" value="5345.0" />
+<double name="Wcar" value="1965.0" />
+<double name="x_angle" value="14.5" />
+<double name="y_angle" value="1.00" />
+<double name="Smax" value="5230.0" />
+<double name="LcL" value="5345" />
+<double name="LcR" value="5345" />
+<float name="LPu" value="0" />
+<float name="RPu" value="0" />
+
+</CarLine>
+<CarLine>       
+<int name="carID" value="556" />
+<int name="atsafe" value="512" />
+<int name="dotNum" value="800" />
+<int name="midLineY1" value="200" />
+<int name="midLineY2" value="300" />
+<int name="midLineY3" value="600" />
+<int name="TrackMode" value="2" />
+<int name="high" value="1070" />
+<int name="Vision" value="141" />
+<int name="mMinY" value="0" />
+<int name="mMaxY" value="360" />
+<int name="mNumF" value="324" />
+<double name="Pu" value="-0.04" />
+<double name="Pv" value="-0.64" />
+<double name="Lcar" value="5000.0" />
+<double name="Wcar" value="2245.0" />
+<double name="x_angle" value="10.0" />
+<double name="y_angle" value="-0.20" />
+<double name="Smax" value="5110.0" />
+<double name="LcL" value="5000" />
+<double name="LcR" value="5000" />
+<float name="LPu" value="0" />
+<float name="RPu" value="0" />
+</CarLine>
+<CarLine>       
+<int name="carID" value="556" />
+<int name="atsafe" value="512" />
+<int name="dotNum" value="800" />
+<int name="midLineY1" value="500" />
+<int name="midLineY2" value="400" />
+<int name="midLineY3" value="300" />
+<int name="TrackMode" value="2" />
+<int name="high" value="1160" />
+<int name="Vision" value="141" />
+<int name="mMinY" value="0" />
+<int name="mMaxY" value="600" />
+<int name="mNumF" value="324" />
+<double name="Pu" value="-0.01" />
+<double name="Pv" value="-0.82" />
+<double name="Lcar" value="5614.0" />
+<double name="Wcar" value="1965.0" />
+<double name="x_angle" value="14.5" />
+<double name="y_angle" value="1.00" />
+<double name="Smax" value="5230.0" />
+<double name="LcL" value="5345" />
+<double name="LcR" value="5345" />
+<float name="LPu" value="0" />
+<float name="RPu" value="0" />
+</CarLine>
+</map>

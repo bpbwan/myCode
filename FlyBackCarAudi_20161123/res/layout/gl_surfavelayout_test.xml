@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flyaudio="http://schemas.android.com/apk/res/cn.flyaudio.navigation"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="false"
+    android:focusable="false" 
+    android:focusableInTouchMode="false"
+    
+    >
+    <com.flyaudio.object.FlyUIObj
+    android:tag="0000800c"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	 android:background="@drawable/black"
+	 android:visibility="gone"
+	/>
+
+
+    <com.flyaudio.backcar.FlyGLSurfaceView
+        android:id="@+id/glsurface"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="false"
+        android:focusable="false" />
+        
+    <com.flyaudio.object.FlyUIObj
+    android:tag="0000800c"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	 android:background="@drawable/black"
+	 android:visibility="gone"
+	/>
+
+
+</FrameLayout>

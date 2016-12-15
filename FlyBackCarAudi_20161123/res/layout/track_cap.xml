@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flyaudio="http://schemas.android.com/apk/res/com.flyaudio.backcar"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#00000000">
+
+ 	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px" 
+        android:layout_marginTop="250px" 
+        android:textColor="#FFFFFFFF"
+        android:text="@string/startedi" />
+
+
+   <EditText
+        android:tag="0010007"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="100px"
+        android:inputType="number"
+        android:ems="10" />
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300px" 
+        android:layout_marginTop="100px" 
+        android:textColor="#FFFFFFFF"
+        android:text="@string/maxangle" />
+        
+    <EditText
+        android:tag="0010001"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="300px"
+        android:inputType="number"
+        android:ems="10" />
+	<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="400px" 
+        android:layout_marginTop="250px" 
+        android:textColor="#FFFFFFFF"
+        android:text="@string/endedi" />
+      <EditText
+        android:tag="0010002"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="400px"
+        android:layout_marginTop="300px"
+		android:inputType="number"
+        android:ems="10" />
+
+       <Button
+            android:tag="0010003"
+            android:layout_width="58px"
+            android:layout_height="58px"
+             android:layout_marginLeft="300px"
+             android:layout_marginTop="380px"
+             android:focusableInTouchMode="true"
+            android:background="@drawable/start"
+          />
+          
+		   <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300px" 
+        android:layout_marginTop="470px" 
+        android:textColor="#FFFFFFFF"
+        android:text="@string/start" />
+        
+              <Button
+            android:tag="0010004"
+            android:layout_width="58px"
+            android:layout_height="58px"
+             android:layout_marginLeft="400px"
+             android:layout_marginTop="380px"
+             android:focusableInTouchMode="true"
+            android:background="@drawable/start"
+          />
+          
+		   <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="400px" 
+        android:layout_marginTop="470px" 
+        android:textColor="#FFFFFFFF"
+        android:text="@string/hidecar" />
+        
+                 <Button
+            android:tag="0010005"
+            android:layout_width="58px"
+            android:layout_height="58px"
+             android:layout_marginLeft="500px"
+             android:layout_marginTop="380px"
+             android:focusableInTouchMode="true"
+            android:background="@drawable/start"
+          />
+
+          	   <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="500px" 
+        android:layout_marginTop="470px" 
+        android:textColor="#FFFFFFFF"
+        android:text="@string/hidebg" />
+
+                 <Button
+            android:tag="0010006"
+            android:layout_width="58px"
+            android:layout_height="58px"
+             android:layout_marginLeft="600px"
+             android:layout_marginTop="380px"
+             android:focusableInTouchMode="true"
+            android:background="@drawable/start"
+          />
+
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="600px" 
+        android:layout_marginTop="470px" 
+        android:textColor="#FFFFFFFF"
+        android:text="@string/hidenotice" />
+        
+</FrameLayout>

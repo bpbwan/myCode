@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:flyaudio="http://schemas.android.com/apk/res/com.flyaudio.object"
+    android:layout_width="match_parent"
+    android:id="@+id/drawer"
+    android:layout_height="match_parent" >
+
+
+<!--=====================fengexian======================-->
+<FrameLayout
+ 	    android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="20px"
+>
+<ImageView
+        android:layout_width="207px"
+        android:layout_height="78px"
+        android:src="@drawable/zline" />
+
+        <!---89-->
+     <com.flyaudio.object.FlySeekBar
+      	android:tag="00070721"
+        android:id="@+id/brisb"
+        android:layout_width="201px"
+        android:layout_height="78px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="3px"   
+        android:maxHeight="78px"
+        android:minHeight="78px"
+        android:max ="300"
+        android:minWidth="200px"
+        android:progressDrawable="@drawable/style"
+        android:thumb="@drawable/z" />
+
+
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66px"
+        android:layout_marginTop="22px"
+        android:text="@string/vdoBri"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+    <TextView
+        android:id="@+id/bri_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="163px"
+        android:layout_marginTop="22px"
+         android:text="@string/zero"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+  </FrameLayout>
+
+
+<FrameLayout
+ 	    android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="100px"
+>
+<ImageView
+        android:layout_width="207px"
+        android:layout_height="78px"
+        android:src="@drawable/zline" />
+
+        <!---89-->
+     <com.flyaudio.object.FlySeekBar
+      	android:tag="00070722"
+        android:id="@+id/brisb"
+        android:layout_width="201px"
+        android:layout_height="78px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="3px"   
+        android:maxHeight="78px"
+        android:minHeight="78px"
+        android:max ="300"
+        android:minWidth="200px"
+        android:progressDrawable="@drawable/style"
+        android:thumb="@drawable/z" />
+
+
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66px"
+        android:layout_marginTop="22px"
+        android:text="@string/vdoHue"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+    <TextView
+        android:id="@+id/bri_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="163px"
+        android:layout_marginTop="22px"
+         android:text="@string/zero"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+  </FrameLayout>
+
+
+
+<FrameLayout
+ 	    android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="180px"
+>
+<ImageView
+        android:layout_width="207px"
+        android:layout_height="78px"
+        android:src="@drawable/zline" />
+
+        <!---89-->
+     <com.flyaudio.object.FlySeekBar
+      	android:tag="00070723"
+        android:id="@+id/brisb"
+        android:layout_width="201px"
+        android:layout_height="78px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="3px"   
+        android:maxHeight="78px"
+        android:minHeight="78px"
+        android:max ="300"
+        android:minWidth="200px"
+        android:progressDrawable="@drawable/style"
+        android:thumb="@drawable/z" />
+
+
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66px"
+        android:layout_marginTop="22px"
+        android:text="@string/vdoSta"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+    <TextView
+        android:id="@+id/bri_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="163px"
+        android:layout_marginTop="22px"
+         android:text="@string/zero"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+  </FrameLayout>
+
+
+
+
+
+<FrameLayout
+ 	    android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="260px"
+>
+<ImageView
+        android:layout_width="207px"
+        android:layout_height="78px"
+        android:src="@drawable/zline" />
+
+        <!---89-->
+     <com.flyaudio.object.FlySeekBar
+      	android:tag="00070724"
+        android:id="@+id/brisb"
+        android:layout_width="201px"
+        android:layout_height="78px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="3px"   
+        android:maxHeight="78px"
+        android:minHeight="78px"
+        android:max ="300"
+        android:minWidth="200px"
+        android:progressDrawable="@drawable/style"
+        android:thumb="@drawable/z" />
+
+
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66px"
+        android:layout_marginTop="22px"
+        android:text="@string/scrHue"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+    <TextView
+        android:id="@+id/bri_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="163px"
+        android:layout_marginTop="22px"
+         android:text="@string/zero"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+  </FrameLayout>
+
+
+
+
+<FrameLayout
+ 	    android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="340px"
+>
+<ImageView
+        android:layout_width="207px"
+        android:layout_height="78px"
+        android:src="@drawable/zline" />
+
+        <!---89-->
+     <com.flyaudio.object.FlySeekBar
+      	android:tag="00070725"
+        android:id="@+id/brisb"
+        android:layout_width="201px"
+        android:layout_height="78px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="3px"   
+        android:maxHeight="78px"
+        android:minHeight="78px"
+        android:max ="300"
+        android:minWidth="200px"
+        android:progressDrawable="@drawable/style"
+        android:thumb="@drawable/z" />
+
+
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66px"
+        android:layout_marginTop="22px"
+        android:text="@string/scrCon"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+    <TextView
+        android:id="@+id/bri_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="163px"
+        android:layout_marginTop="22px"
+         android:text="@string/zero"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+  </FrameLayout>
+
+
+
+
+<FrameLayout
+ 	    android:layout_gravity="left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="420px"
+>
+<ImageView
+        android:layout_width="207px"
+        android:layout_height="78px"
+        android:src="@drawable/zline" />
+
+        <!---89-->
+     <com.flyaudio.object.FlySeekBar
+      	android:tag="00070726"
+        android:id="@+id/brisb"
+        android:layout_width="201px"
+        android:layout_height="78px"
+        android:layout_gravity="bottom"
+        android:layout_marginLeft="3px"   
+        android:maxHeight="78px"
+        android:minHeight="78px"
+        android:max ="300"
+        android:minWidth="200px"
+        android:progressDrawable="@drawable/style"
+        android:thumb="@drawable/z" />
+
+
+         <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="66px"
+        android:layout_marginTop="22px"
+        android:text="@string/scrSta"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+    <TextView
+        android:id="@+id/bri_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="163px"
+        android:layout_marginTop="22px"
+         android:text="@string/zero"
+        android:textColor="#ffffffff"
+        android:textSize="22px" />
+
+  </FrameLayout>
+
+
+    
+</FrameLayout>

@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/flyaudio/backcar/BackCarModule.java=UTF-8
+encoding//src/com/flyaudio/backcar/BackCarService.java=UTF-8
+encoding//src/com/flyaudio/backcar/FlyBackCarView.java=UTF-8
+encoding//src/com/flyaudio/backcar/PluginProxyContext.java=UTF-8
+encoding//src/com/flyaudio/globaldefine/FlyaudioProperties.java=UTF-8
+encoding//src/com/flyaudio/object/FlyButtonObj.java=UTF-8
+encoding//src/com/flyaudio/object/FlyEnumGaugeObj.java=UTF-8
+encoding//src/com/flyaudio/object/FlyTextButtonObj.java=UTF-8
+encoding//src/com/flyaudio/object/FlyTextObj.java=UTF-8
+encoding//src/com/flyaudio/object/FlyTrackView.java=UTF-8
