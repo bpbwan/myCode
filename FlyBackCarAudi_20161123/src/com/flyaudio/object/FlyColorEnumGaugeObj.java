@@ -17,6 +17,9 @@ public class FlyColorEnumGaugeObj   extends FlyEnumGaugeObj{
 	private boolean changeDrawable = false;
 	private int ChangeColor = 0x00FF0000;
 	Drawable SaveDrawable  = null;
+	private int saveLevel = -1;
+	private boolean needChangeColor = false;
+	private int needChange = -1;
 	public FlyColorEnumGaugeObj(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
@@ -24,6 +27,8 @@ public class FlyColorEnumGaugeObj   extends FlyEnumGaugeObj{
 	}
 	
 	public void setBackgroundIndex(int level) {
+		if(saveLevel != level || needChangeColor){
+			saveLevel = level;
 		if(SaveDrawable != null)
 			setBackground(SaveDrawable);
 		else 
@@ -42,23 +47,27 @@ public class FlyColorEnumGaugeObj   extends FlyEnumGaugeObj{
 			}
 			
 		} 
-
-			
+		needChangeColor = false;
+		}
+//			super.setBackgroundIndex(level);
 	}
 	
 	public void ChangeDrawableColor(int data){
-	
+		if( needChange != data){
+			needChange = data;
 		if(data == 1)
 			changeDrawable = true;
 		else 
 			changeDrawable = false;
+		
+		needChangeColor = true;
+		}
+
 	}
 	
 	@Override
 	protected void onDraw(Canvas canvas) {
 		// TODO Auto-generated method stub
-
-		
 
 			super.onDraw(canvas);
 	}

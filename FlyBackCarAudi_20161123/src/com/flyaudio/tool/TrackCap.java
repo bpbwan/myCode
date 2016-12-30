@@ -202,7 +202,10 @@ public class TrackCap {
 					// Log.e(TAG, "BackCar Exception e");
 					e.printStackTrace();
 				}
-
+				
+				
+				
+				
 				double s = 0;
 				if (tmpAngle <= 90)
 					s = s_maxAn + (track_s - (90 - tmpAngle)) * xi;
@@ -211,14 +214,14 @@ public class TrackCap {
 				saveName = path + filename + "" + tmpAngle + ".png";
 				tmpAngle++;
 
-				try {
-					Runtime runtime = Runtime.getRuntime();
-					String exc = "screencap -p " + saveName;
-					runtime.exec(exc);
-					Log.d("DDD", "screencap -p " + saveName + "   " + s);
-				} catch (IOException e) {
-					Log.e("Exception when doBack", e.toString());
-				}
+//				try {
+//					Runtime runtime = Runtime.getRuntime();
+//					String exc = "screencap -p " + saveName;
+//					runtime.exec(exc);
+//					Log.d("DDD", "screencap -p " + saveName + "   " + s);
+//				} catch (IOException e) {
+//					Log.e("Exception when doBack", e.toString());
+//				}
 
 				// cap(saveName);
 				try {
@@ -227,10 +230,16 @@ public class TrackCap {
 					// Log.e(TAG, "BackCar Exception e");
 					e.printStackTrace();
 				}
-
+				
+				Bitmap bmp = GLTrackViewToolHelper.getInstance(null).getGlview().getCurrentBmp();
+				capBitmap(bmp, saveName);
+				
 			}
 
 			saveName = path + filename + "" + 90 + ".png";
+			Bitmap bmp2 = GLTrackViewToolHelper.getInstance(null).getGlview().getCurrentBmp();
+			capBitmap(bmp2, saveName);
+			
 			try {
 				Runtime runtime = Runtime.getRuntime();
 				String exc = "screencap -p " + saveName;
@@ -306,4 +315,27 @@ public class TrackCap {
 
 	}
 
+	
+	public void capBitmap(Bitmap bitmap,String str) {
+		String fname = str;
+		if (bitmap != null) {
+
+			try {
+
+				FileOutputStream out = new FileOutputStream(fname);
+
+				bitmap.compress(Bitmap.CompressFormat.PNG, 100, out);
+
+			} catch (Exception e) {
+
+				e.printStackTrace();
+
+			}
+
+		} else {
+
+		}
+
+	}
+	
 }

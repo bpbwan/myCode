@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.launcher2.Hotseat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:launcher="http://schemas.android.com/apk/res/com.android.launcher"
+    xmlns:flyaudio="http://schemas.android.com/apk/res/com.android.launcher"
+    launcher:cellCountX="1"
+    launcher:cellCountY="1" >
+
+    <!-- android:background="@drawable/main_menubar_bg" -->
+
+    <com.android.flyaudioui.object.FlyTextButtonObj
+        android:id="@+id/menubuton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="0px"
+        android:visibility="gone" />
+
+    <com.android.flyaudioui.object.FlyTextButtonObj
+        android:id="@+id/menubuton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="0px"
+        android:visibility="gone" />
+
+    <com.android.flyaudioui.object.FlyTextButtonObj
+        android:id="@+id/menubuton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="0px"
+        android:visibility="gone" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="0px"
+        layout="@layout/fly_button_mute" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="710px"
+        layout="@layout/fly_button_close_screen" />
+
+    <include
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="0px"
+        layout="@layout/fly_button_allapp" />
+
+    <com.android.launcher2.CellLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginBottom="0px"
+        android:paddingBottom="20px"
+        android:paddingLeft="0dp"
+        android:paddingRight="0dp"
+        android:paddingTop="0px"
+        android:visibility="gone"
+        launcher:cellHeight="90px"
+        launcher:cellWidth="250px"
+        launcher:heightGap="0px"
+        launcher:maxGap="0px"
+        launcher:widthGap="0px" />
+    <!--
+        launcher:cellWidth="@dimen/hotseat_cell_width"
+        launcher:heightGap="@dimen/hotseat_height_gap"
+        launcher:maxGap="@dimen/workspace_max_gap"
+        launcher:widthGap="@dimen/hotseat_width_gap"
+    -->
+    <!-- @dimen/hotseat_cell_width -->
+
+    <com.android.flyaudioui.object.FlyTextButtonObj
+        android:id="@+id/menubuton4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="0px"
+        android:visibility="gone" />
+
+    <com.android.flyaudioui.object.FlyTextButtonObj
+        android:id="@+id/menubuton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="0px"
+        android:visibility="gone" />
+
+    <com.android.flyaudioui.object.FlyTextButtonObj
+        android:id="@+id/media_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="0px"
+        android:layout_marginLeft="0px"
+        android:visibility="gone"
+        flyaudio:actionUI="false" />
+    <!--  -->
+
+</com.android.launcher2.Hotseat>

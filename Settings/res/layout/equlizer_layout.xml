@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="480dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="5dp"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/resetbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/eq_button"
+            android:text="@string/reset"
+            android:textColor="@color/button_color"
+            android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/eq_title"
+            android:textSize="18sp"
+        />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:src="@drawable/down_line"/>
+        </LinearLayout>
+
+        <Switch
+            android:id="@+id/on_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="20dp"
+            android:textOn=""
+            android:textOff=""
+            android:track="@drawable/switch_bg"
+            android:thumb="@drawable/thumb"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="480dp"
+        android:layout_height="wrap_content"
+        android:gravity="top|center"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_60"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_170"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_370"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_600"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_1k"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_3k"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_6k"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_12k"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_14k"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="45dp"
+            android:layout_height="wrap_content" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="vertical" >
+
+                <com.ATC.audio.VerticalSeekBar
+                    android:id="@+id/_15k"
+                    android:layout_width="21dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_vertical"
+                    android:max="28"
+                    android:maxHeight="6dp"
+                    android:minHeight="6dp"
+                    android:progress="10"
+                    android:progressDrawable="@drawable/bg_bar"
+                    android:thumb="@drawable/thumb_bar" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rg_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|center"
+        android:orientation="horizontal"
+        android:paddingTop="10dp" >
+        <RadioGroup android:id="@+id/eq_mode"
+	        android:orientation="horizontal"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="right|top">	
+	        <RadioButton
+	            android:id="@+id/users"
+	            android:layout_width="60dp"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_margin="4dp"
+	            android:background="@drawable/rb_bg"
+	            android:button="@null"
+	            android:text="@string/user"
+	            android:textSize="16sp"
+	            android:textColor="@color/button_color"/>
+
+	        <RadioButton
+	            android:id="@+id/pop"
+	            android:layout_width="60dp"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_margin="4dp"
+	            android:background="@drawable/rb_bg"
+	            android:button="@null"
+	            android:text="@string/pop"
+	            android:textColor="@color/button_color"
+	            android:textSize="16sp" />
+
+	        <RadioButton
+	            android:id="@+id/live"
+	            android:layout_width="60dp"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_margin="4dp"
+	            android:background="@drawable/rb_bg"
+	            android:button="@null"
+	            android:text="@string/live"
+	            android:textColor="@color/button_color"
+	            android:textSize="16sp" />
+
+	        <RadioButton
+	            android:id="@+id/classic"
+	            android:layout_width="60dp"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_margin="4dp"
+	            android:background="@drawable/rb_bg"
+	            android:button="@null"
+	            android:text="@string/classic"
+	            android:textColor="@color/button_color"
+	            android:textSize="16sp" />
+
+	        <RadioButton
+	            android:id="@+id/rock"
+	            android:layout_width="60dp"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_margin="4dp"
+	            android:background="@drawable/rb_bg"
+	            android:button="@null"
+	            android:text="@string/rock"
+	            android:textColor="@color/button_color"
+	            android:textSize="16sp" />
+
+	        <RadioButton
+	            android:id="@+id/dance"
+	            android:layout_width="60dp"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_margin="4dp"
+	            android:background="@drawable/rb_bg"
+	            android:button="@null"
+	            android:text="@string/dance"
+	            android:textColor="@color/button_color"
+	            android:textSize="16sp" />
+
+	        <RadioButton
+	            android:id="@+id/soft"
+	            android:layout_width="60dp"
+	            android:layout_height="wrap_content"
+	            android:gravity="center"
+	            android:layout_margin="4dp"
+	            android:background="@drawable/rb_bg"
+	            android:button="@null"
+	            android:text="@string/soft"
+	            android:textColor="@color/button_color"
+	            android:textSize="16sp" />
+	    </RadioGroup>
+    </LinearLayout>
+
+</LinearLayout>

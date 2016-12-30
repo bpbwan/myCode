@@ -2,6 +2,7 @@ package com.flyaudio.backcar.modules;
 
 import java.util.Locale;
 
+import com.flyaudio.backcar913.BackCarTag;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Messenger;
@@ -80,6 +81,7 @@ public class G6zModule extends BaseModule {
 
 	public void BaseModulepreStart() {
 		getFlyBackCarMainView().DetechBackCarMode(mBackCarService.getBackCarMode());
+		
 	}
 
 	public void DealActivityStop() {
@@ -259,8 +261,9 @@ public class G6zModule extends BaseModule {
 						// 0);
 
 					}
-
-					// mBackCarService.testRunning();
+				
+			if(DEBUG_L2)
+				mBackCarService.testRunning();
 					break;
 
 				case BackCarTag.AUXLINE:
@@ -473,6 +476,25 @@ public class G6zModule extends BaseModule {
 				false);
 	}
 
+	@Override
+	  public void SetTrackDraw(boolean flag){
+		  super.SetTrackDraw(flag);
+			getGLTrackHelper().getGlview().setDraw(flag);
+			
+			if(flag){
+				if(mBackCarService.getBackCarMode() == mBackCarService.BACKCAR_CVB){
+					mBackCarModule.ShowUiView(BackCarTag.bgusb_camera, false);
+					mBackCarModule.ShowUiView(BackCarTag.bgcvb, true);
+				}else if(mBackCarService.getBackCarMode() == mBackCarService.BACKCAR_USB){
+					mBackCarModule.ShowUiView(BackCarTag.bgcvb, false);
+					mBackCarModule.ShowUiView(BackCarTag.bgusb_camera, true);
+				}
+			}else {
+				mBackCarModule.ShowUiView(BackCarTag.bgusb_camera, false);
+				mBackCarModule.ShowUiView(BackCarTag.bgcvb, false);
+			}
+	  }
+	
 	public void moduleEnter() {
 
 		if (IsCVBVdoMode())
@@ -489,12 +511,14 @@ public class G6zModule extends BaseModule {
 			Log.d("DDDB", "isInKeygurad  ");
 		}
 		GLTrackonResume();
-		getGLTrackHelper().getGlview().setDraw(isTrackOpen());
 
+		SetTrackDraw(isTrackOpen());
+		
 		getGLTrackHelper().getGlview().requestSyncAngle();
 		getGLTrackHelper().getGlview().requestSyncAngle();
 		getGLTrackHelper().getGlview().requestSyncAngle();
 
+		
 		Message msg = Message.obtain();
 		msg.what = MsgType.REQUEST_SYNCANGLE;
 		DealBackCarMessages(myMsgHandler, MsgType.MSG_SENGDELAY, 0, msg,

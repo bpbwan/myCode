@@ -708,6 +708,7 @@ public class BackCarService extends Service {
 
 			} else if (TrackOpenCap.equals(action)) {
 				Log.d("DDD", "TrackOpenCap");
+				getBaseModule().DEBUG_L2 = true;
 				TrackCap.getInstance(mBackCarService).show();
 			} else if (TrackCloseCap.equals(action)) {
 				Log.d("DDD", "TrackCloseCap");
@@ -733,6 +734,8 @@ public class BackCarService extends Service {
 							MsgType.MSG_TIME_COUNT, 1000);
 				} else
 					getBaseModule().DEBUG = false;
+				
+				mBackCarModule.showsignview(true); //remove no_signal page
 			} else if (SVREQUEST_ACTION.equals(action)) {
 				// 申請是在倒車
 				if (mBackCarModule.getBackCarState()&& mgetBackCarMode() == mBackCarService.BACKCAR_SV)
@@ -1793,6 +1796,7 @@ public class BackCarService extends Service {
 
 					// Log.i(TAG, "Receive EVENT_BACKCAR_RUNNING event");
 					// testRunning();
+			// mBackCarService.testRunning();
 				} else if (BackCar.EVENT_BACKCAR_ERROR == msg.what) {
 					Log.e(TAG,
 							"BackCar break Receive EVENT_BACKCAR_ERROR event");

@@ -13,6 +13,7 @@ import android.view.View;
 import android.content.res.Resources;
 
 import com.flyaudio.backcar.R;
+import com.flyaudio.backcar.modules.BaseModule;
 //import com.flyaudio.fui.SkinResource;
 import com.flyaudio.globaldefine.DataObjType;
 import com.flyaudio.xml.ObjDataXMLParser;
@@ -121,8 +122,6 @@ public class UIDataStoreCenter {
 
 	public void handleControlUIMessage(byte[] data, int len) {
 		int controlID = controlID(data);
-		if(460288 == controlID)
-		return ;
 		DataObjBase DataObj = mMapIdValue.get(controlID);
 		if (DataObj != null) {
 			DataObj.storeProperty(data, len);
@@ -130,6 +129,7 @@ public class UIDataStoreCenter {
 			// String.format("%08x", controlID));
 		} else {
 			// Log.d("BackCardataxml","handleControlUIMessage can't find id:"+controlID);
+			if(BaseModule.getBaseModule().DEBUG)
 			Log.d("BackCar",
 					"handleControlUIMessage can't find id:"
 							+ String.format("%08x", controlID));

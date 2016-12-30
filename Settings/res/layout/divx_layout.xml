@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="480dp"
+    android:layout_height="350dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingBottom="20dip"
+    android:paddingTop="70dip" >
+
+    <TextView
+        android:id="@+id/tDrmDivxRVodLabel"
+        android:layout_width="420dip"
+        android:layout_height="80dip"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="80dip"
+        android:background="@drawable/textview_border"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/drm_divx_vod_tip"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="40dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/bRegister"
+        android:layout_width="150dip"
+        android:layout_height="50dip"
+        android:layout_marginTop="30dip"
+        android:text="@string/drm_divx_register"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/bDeregister"
+        android:layout_width="150dip"
+        android:layout_height="50dip"
+        android:layout_marginTop="25dip"
+        android:text="@string/drm_divx_deregister"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/bExit"
+        android:layout_width="150dip"
+        android:layout_height="50dip"
+        android:layout_marginTop="25dip"
+        android:text="@string/drm_divx_exit"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textSize="25dp" />
+
+</LinearLayout>

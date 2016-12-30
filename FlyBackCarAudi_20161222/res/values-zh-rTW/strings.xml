@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*
+* Copyright (C) 2008 The Android Open Source Project
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*      http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+-->
+<resources xmlns:android="http://schemas.android.com/apk/res/android" xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="osdTextColor">ffffff</string>
+
+    <!-- back -->
+    <string name="back">返回</string>
+    <string name="back_call_text">來電...</string>
+    <string name="backcar_alarm">註意！請確認安全。</string>
+
+    <!-- back car -->
+    <string name="back_video_warning">檢查周圍環境安全</string>
+    <string name="back_no_sign">沒有檢測到倒車視頻信號</string>
+    
+    <!-- aux -->
+    <string name="aux_check">檢測視頻信號</string>
+    <string name="aux_no_sign_detected">請檢查相關設備連接</string>
+</resources>

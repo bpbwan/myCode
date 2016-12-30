@@ -4,6 +4,7 @@ import com.flyaudio.backcar.BackCarService;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
@@ -17,6 +18,8 @@ public class HandleServiceMsg extends Handler {
     private HandleJumpPageMsg mHandJumpPage;
     private HandleUIMessage mUIHandler;
 
+
+    private static ChildThread mChildThread = null;
     public HandleJumpPageMsg getmHandJumpPage() {
         if (mHandJumpPage != null)
             Log.d(tag, "mHandJumpPage != null");
@@ -27,6 +30,12 @@ public class HandleServiceMsg extends Handler {
     	mBackCarService = mService;
         mHandJumpPage = new HandleJumpPageMsg(mBackCarService);
         mUIHandler = new HandleUIMessage();
+        
+//        if( mChildThread != null){
+//        	mChildThread.mChildHandler. getLooper().quit();
+//        }
+//        mChildThread = new ChildThread();
+//        mChildThread.start();
     }
 
     @Override
@@ -50,6 +59,12 @@ public class HandleServiceMsg extends Handler {
             int type = bundle.getInt("type");
             byte[] data = bundle.getByteArray("data");
             analysisData(data, len, type);
+        
+//            if(mChildThread.mChildHandler != null){
+//            	Message msg1 = mChildThread.mChildHandler.obtainMessage();
+//            	msg1.copyFrom(msg);
+//            	mChildThread.mChildHandler.sendMessage(msg1);
+//            }
             break;
 
         }
@@ -154,4 +169,35 @@ public class HandleServiceMsg extends Handler {
         }  
         return ret;  
       } 
+    
+    
+    class ChildThread extends Thread {
+    	 
+        private static final String CHILD_TAG = "ChildThread";
+        public Handler mChildHandler = null;
+        Looper myLooper =null;
+        public void run() {
+            this.setName("ChildThread");
+ 
+            //初始化消息循环队列，需要在Handler创建之前
+          
+            Looper.prepare();
+            myLooper = Looper.myLooper();
+            Log.d("DDDDDD", "     "+myLooper);
+            mChildHandler = new Handler(myLooper) {
+                @Override
+                public void handleMessage(Message msg) {
+                  Bundle bundle = msg.getData();
+                  int len = bundle.getInt("len");
+                  int type = bundle.getInt("type");
+                  byte[] data = bundle.getByteArray("data");
+                  analysisData(data, len, type);
+                }
+ 
+            };
+
+            //启动子线程消息循环队列
+            Looper.loop();
+        }
+    }
 }

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<shortcuts>
+    <shortcut 
+        shortcutname="@string/appname_com_autonavi_xmgd_navigator" 
+        shortcuticon="@drawable/icon_com_autonavi_xmgd_navigator" 
+        classname="com.autonavi.xmgd.navigator.Warn" 
+        packagename="com.autonavi.xmgd.navigator" />
+    
+    <shortcut 
+        shortcutname="@string/appname_dopool_player" 
+        shortcuticon="@drawable/icon_dopool_player" 
+        classname="dopool.player.MainActivity" 
+        packagename="dopool.player" />
+    
+    <shortcut 
+        shortcutname="@string/appname_com_estrongs_android_pop"
+        shortcuticon="@drawable/icon_com_estrongs_android_pop" 
+        classname="com.estrongs.android.pop.view.FileExplorerActivity" 
+        packagename="com.estrongs.android.pop" />
+    
+    <shortcut shortcutname="@string/appname_com_tencent_research_drop" 
+        shortcuticon="@drawable/icon_com_tencent_research_drop" 
+        classname="com.tencent.research.drop.FileManager" 
+        packagename="com.tencent.research.drop" />
+    
+    <shortcut 
+        shortcutname="@string/appname_com_tencent_qqmusic" 
+        shortcuticon="@drawable/icon_com_tencent_qqmusic" 
+        classname="com.tencent.qqmusic.activity.AppStarterActivity" 
+        packagename="com.tencent.qqmusic" />
+    
+    <shortcut shortcutname="@string/appname_radiotime_player" 
+        shortcuticon="@drawable/icon_radiotime_player" 
+        classname="tunein.ui.actvities.TuneInHomeActivity" 
+        packagename="radiotime.player" />
+    
+    <shortcut 
+        shortcutname="@string/appname_com_baidu_appsearch" 
+        shortcuticon="@drawable/icon_com_baidu_appsearch" 
+        classname="com.baidu.appsearch.LauncherActivity" 
+        packagename="com.baidu.appsearch" />
+    
+    <shortcut 
+        shortcutname="@string/appname_com_baidu_baidumap" 
+        shortcuticon="@drawable/icon_com_baidu_baidumap" 
+        classname="com.baidu.baidumaps.WelcomeScreen" 
+        packagename="com.baidu.BaiduMap" />
+    
+    <shortcut 
+        shortcutname="@string/appname_com_baidu_input" 
+        shortcuticon="@drawable/icon_com_baidu_input" 
+        classname="com.baidu.input.ImeMainConfigActivity" 
+        packagename="com.baidu.input" />
+    
+    <shortcut 
+        shortcutname="@string/appname_com_ifeng_news2" 
+        shortcuticon="@drawable/icon_com_ifeng_news2" 
+        classname="com.ifeng.news2.activity.SplashActivity" 
+        packagename="com.ifeng.news2" />
+    
+    <shortcut 
+        shortcutname="@string/appname_com_baidu_hao123" 
+        shortcuticon="@drawable/icon_com_baidu_hao123" 
+        classname="com.baidu.hao123.ACSplash" 
+        packagename="com.baidu.hao123" />
+</shortcuts>

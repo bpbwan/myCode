@@ -57,7 +57,7 @@ public class PluginProxyContext extends ContextWrapper {
 	public static Context externModuleContext = null;
 	private static final String PlugPagekageName = "com.flyaudio.object";
 
-	//different_car_plug  fen jixing 
+	//different_car_plug  
 	public boolean  different_car_plug = false; 
 	
 	public PluginProxyContext(Context base) {
@@ -95,7 +95,12 @@ public class PluginProxyContext extends ContextWrapper {
 			cartype = 136;
 			FlyBaseListener.carTag = FlyBaseListener.CAR.G6Z;
 			break;
+		case 561: //chuanqi
+			cartype = 561;
+			FlyBaseListener.carTag = FlyBaseListener.CAR.G6Z;
+			break;
 		case 175:
+			FlyBaseListener.carTag = FlyBaseListener.CAR.G6Z;
 			break;
 		case 215: // Gx551
 		case 551:

@@ -22,7 +22,7 @@ public class FileAdapter extends BaseAdapter {
 
 	private LayoutInflater _inflater;
 	private List<FileInfo> _files;
-	String TAG = "AAA";
+	String TAG = "FileAdapter";
 	public FileAdapter(Context context, List<FileInfo> files) {
 		_files = files;
 		_inflater = LayoutInflater.from(context);

@@ -141,14 +141,14 @@ public class FlyBackCarMainView {
 		// mScreenH);
 		lp = new WindowManager.LayoutParams(
 				WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-		lp.flags = WindowManager.LayoutParams.FLAG_FULLSCREEN;
+		lp.flags = WindowManager.LayoutParams.FLAG_FULLSCREEN  | WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED;
 		lp.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
 		lp.format = PixelFormat.TRANSLUCENT;
 		
 		
 		vdolp = new WindowManager.LayoutParams(
 				WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-		vdolp.flags = WindowManager.LayoutParams.FLAG_FULLSCREEN;
+		vdolp.flags = WindowManager.LayoutParams.FLAG_FULLSCREEN | WindowManager.LayoutParams.FLAG_HARDWARE_ACCELERATED;
 		vdolp.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
 		vdolp.format = PixelFormat.RGBA_8888;
 		mSharedPreferences = mBackCarService.getSharedPreferences(shared_info,
@@ -158,6 +158,7 @@ public class FlyBackCarMainView {
 //     	 lp.width = 800;
 //    	 vdolp.width = 800;
 ////		 lp.height = 480;
+
 
 	}
 	LayoutInflater inflater;
@@ -256,17 +257,10 @@ public class FlyBackCarMainView {
 			}
 			return;
 		}
+		
+		getPreferencesAndSetLayoutParams("AuxLine_Height", BackCarTag.AuxLine);
+		getPreferencesAndSetLayoutParams("RdarDistanceText", FlyUtil.HexToTag(BackCarTag.RadarDistance));
 
-		int lpBottom = mSharedPreferences.getInt("AuxLine_Height", 0);
-		if (lpBottom != 0) {
-			View v = mainLayoutView.findViewWithTag(BackCarTag.AuxLine);
-			if (v != null) {
-				FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) v
-						.getLayoutParams();
-				lp.bottomMargin = lpBottom;
-				v.setLayoutParams(lp);
-			}
-		}
 
 		String extern_UI = "extern_backcar_ui_" + BackCarService.ui_carType;
 
@@ -296,6 +290,29 @@ public class FlyBackCarMainView {
 						PluginProxyContext.externContext, AuxLine_down));
 		Log.i(TAG, "initCarUiView");
 
+		//
+//		Paint pm = new Paint();
+//		pm.setColor(Color.BLUE);
+//		layout.setLayerType(View.LAYER_TYPE_HARDWARE, pm);
+	}
+	
+	public void getPreferencesAndSetLayoutParams(String read_str, String Cid){
+		
+
+	int  lpBottom = mSharedPreferences.getInt(read_str, 0);
+	if(lpBottom == 0)
+		lpBottom= mBackCarService.proxyContext.getInteger(read_str,lpBottom);
+		Log.d(TAG, "read_str   "+read_str+"  "+lpBottom);
+		
+		if (lpBottom != 0) {
+			final View V = findChildViewWithTag(Cid);
+			if (V != null) {
+				FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) V
+						.getLayoutParams();
+				lp.bottomMargin = lpBottom;
+				V.setLayoutParams(lp);
+			}
+		}
 	}
 	
  public void BlackPageShow(){
@@ -620,9 +637,19 @@ public class FlyBackCarMainView {
 		if ((lp.bottomMargin - ev_Y) > 0 && (lp.bottomMargin - ev_Y) < 300)
 			lp.bottomMargin -= ev_Y;
 		v.setLayoutParams(lp);
-
+		
+		final View RdarDistanceText = findChildViewWithTag(FlyUtil.HexToTag(BackCarTag.RadarDistance));
+		if(RdarDistanceText != null ){
+			lp = (FrameLayout.LayoutParams) RdarDistanceText
+					.getLayoutParams();
+			if ((lp.bottomMargin - ev_Y) > 0 && (lp.bottomMargin - ev_Y) < 300)
+				lp.bottomMargin -= ev_Y;
+			RdarDistanceText.setLayoutParams(lp);
+			saveEditToPreference("RdarDistanceText", lp.bottomMargin);
+		}
 		saveEditToPreference("AuxLine_Height", lp.bottomMargin);
-
+		
+		
 	}
 
 	public void mSetTrailMode(int mode) {
@@ -762,13 +789,16 @@ public class FlyBackCarMainView {
 
 	public void setFronView(boolean flag) {
 		setRearview_xian(flag);
+		Log.d("GL", "setFronView   "+flag);
 		flyBackCarView.setDraw(flag);
 	}
 
 	public boolean isSetShowTrack(){
 		return frontflag;
 	}
+	
 	public void setCvbFronView() {
+		Log.d("GL", "setCvbFronView "+frontflag);
 		flyBackCarView.setDraw(frontflag);
 		mSetTrailMode(CVBBACKFLAG);
 		if(BaseModule.getBaseModule().DEBUG)
@@ -840,7 +870,7 @@ public class FlyBackCarMainView {
 			tmpMsg.what = 1;
 			tmpMsg.arg1 = angle;
 			myMsgHandler.sendMessage(tmpMsg);
-			return;
+		
 		} else if (FlyUIControlID == 460080)
 			mBackCarModule.FromModuleMsgCtrAuxLine((byte) data[9]);
 		else if (FlyUIControlID == 459028) // 00070114 //phone call

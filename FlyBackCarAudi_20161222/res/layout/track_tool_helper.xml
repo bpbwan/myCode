@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flyaudio="http://schemas.android.com/apk/res/cn.flyaudio.navigation"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true"
+>
+    
+ <LinearLayout  
+ android:layout_width="fill_parent" 
+ android:layout_height="fill_parent" 
+ android:orientation="vertical"    
+ android:id="@+id/addid">
+ 
+    <RelativeLayout 
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:clickable="false"
+    android:focusable="true" >	
+      
+  <Button android:id="@+id/btn19" 
+  android:layout_width="wrap_content" 
+  android:layout_height="wrap_content" 
+  android:layout_marginLeft="10px"  
+  android:layout_marginTop="10px"  
+  android:text="@string/Reset"/>
+  
+<Button android:id="@+id/btn20" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginLeft="10px" 
+android:layout_marginTop="80px" 
+android:text="@string/Save"/>
+
+<Button android:id="@+id/btn1" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginLeft="120px" 
+android:layout_marginTop="10px" 
+android:text="@string/pre" 
+android:visibility="gone"/>
+
+<Button android:id="@+id/btn2" 
+android:layout_width="wrap_content" 
+android:layout_height="wrap_content" 
+android:layout_marginLeft="220px" 
+android:layout_marginTop="10px" 
+android:text="@string/next" 
+android:visibility="gone"/>
+
+
+        
+	<SeekBar
+        android:id="@+id/seekBar1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+	android:max="20000" 
+	android:visibility="gone"/>
+	
+	   <com.flyaudio.object.FlyTrackView
+        android:id="@+id/tracktoolview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="false" />
+
+        
+ </RelativeLayout>
+
+ </LinearLayout>
+ 
+
+
+</FrameLayout>
+

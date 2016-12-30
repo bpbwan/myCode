@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="480dp"
+    android:layout_height="350dp"
+    android:layout_gravity="center" >
+
+    <com.ATCSetting.logosetter.ThumbnailsWindows
+        android:layout_width="480dp"
+        android:layout_height="350dp" >
+    </com.ATCSetting.logosetter.ThumbnailsWindows>
+
+</RelativeLayout>

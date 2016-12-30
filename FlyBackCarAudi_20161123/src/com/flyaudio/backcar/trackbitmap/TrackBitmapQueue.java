@@ -57,7 +57,7 @@ public class TrackBitmapQueue {
 				TrackBitmap.notifyComsumeSync(queue.size());
 				}catch(NoSuchElementException e){
 					queue.clear();
-					Log.d("GL", "QueueRef  "+e);
+					Log.d("GL", "QueueRef  "+queue.size() +" "+e);
 				}
 			}
 			return ret;
@@ -70,6 +70,10 @@ public class TrackBitmapQueue {
 
 		if (queue.size() >= QUEUESIZE)
 			QueueRef("offerqueue");
+		
+		if(queue.size() > QUEUESIZE)
+			queue.clear();
+		
 		queue.offer(data);
 
 		// Log.d("DDD", "OfferQueue size "+queue.size());
@@ -77,7 +81,7 @@ public class TrackBitmapQueue {
 	public void Clear(int size){
 		try{
 		for(int i =0 ; i<size; i++)
-			queue.poll();
+			QueueRef("offerqueue");
 			}catch(NoSuchElementException e){
 					
 				}

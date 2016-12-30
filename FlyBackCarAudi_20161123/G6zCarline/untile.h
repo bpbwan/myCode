@@ -62,11 +62,11 @@ struct ParkLineParam
 		at2m(1382),at3m(2800),at4m(3700),at5m(4000),Fcar( 1000.0){}
 			
 
-	int dotNum;       //  »­µãµÄ¸öÊý
-	double Smax;     //   »­Ïß×îÔ¶¾àÀë
+	int dotNum;       //  ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+	double Smax;     //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½
 
-	int start; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
-	int Lstart; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
+	int start; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
+	int Lstart; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
 	int Rstart;
 
 	int atsafe;
@@ -121,11 +121,11 @@ struct CameraParam
 		dPv(0.03),dx_angle(24),dy_angle(0.0),dz_angle(0.0){}
 	
 	double dP;
-	int	   nhigh;           //  ÉãÏñ»ú¹âÑ§ÖÐÐÄÔÚÊÀ½çË®Æ½µØÃæµÄ¸ß¶È
-	int    nVision;         //  ÉãÏñ»úÊÓ½Ç  
-	double dPu;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCDË®Æ½ Ê¹Í¼ÏñÓÒÒÆÎª+  0.01
-	double dPv;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCD´¹Ö± Ê¹Í¼ÏñÉÏÒÆÎª+  0.01
-	double dx_angle;        //  ÉãÏñ»úX ·½ÏòË®Æ½½Ç¶È
+	int	   nhigh;           //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
+	int    nVision;         //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½  
+	double dPu;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDË®Æ½ Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	double dPv;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDï¿½ï¿½Ö± Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	double dx_angle;        //  ï¿½ï¿½ï¿½ï¿½ï¿½X ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½Ç¶ï¿½
 	double dy_angle;
 	double dz_angle;
 };
@@ -154,12 +154,12 @@ public:
 	
 	void ParkSevenLine();
 public:
-	void init_Param();//³õÊ¼»¯ËùÓÐ²ÎÊý
+	void init_Param();//ï¿½ï¿½Ê¼ï¿½ï¿½ï¿½ï¿½ï¿½Ð²ï¿½ï¿½ï¿½
 	void init_Car_Pm(double Lca=7300.0,double Wca=1545.0,int lsa=0);
 	void init_Camera_InstallPm();
 	void init_Camera_Module_insidePm();
 	void init_Camera_Module_OutPm();
-	void init_CalCurMatrixR();// ¾ØÕó
+	void init_CalCurMatrixR();// ï¿½ï¿½ï¿½ï¿½
 	void DrawALine(int start_x, int start_y, int end_x, int end_y, int line_width);
 	void MidpointLine(int x0,int y0,int x1,int y1,int line_width); 
 	void FillFullLine(int x0,int y0,int x1,int y1,int line_width); 
@@ -170,7 +170,7 @@ public:
  	void AllFunc();
 // 	void TestDraw();
 	/////////////////SAN ///////////////
-	void DrawParkLine();//°üº¬ÏÂÃæ7ÌõÏß
+	void DrawParkLine();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½7ï¿½ï¿½ï¿½ï¿½
 	void Linefl();
 	void Linefr();
 	void Lineff();
@@ -181,18 +181,21 @@ public:
 
 	void InitSamplePm();
 	void SwitchTrackUsingMode();
-	void SampleLocusLine_R(double angle, bool flag);//Ô¤ÀÀ¹ì¼£
+	void SampleLocusLine_R(double angle, bool flag);//Ô¤ï¿½ï¿½ï¿½ì¼£
 	void SampleLocusLine_L(double angle, bool flag);
 	
 	void (CUntitled::*LocusLine_R)(double angle, bool flag);
 	void (CUntitled::*LocusLine_L)(double angle, bool flag);
 
 
-	void SampleLocusLine_R1(double angle, bool flag);//Ô¤ÀÀ¹ì¼£
+	void SampleLocusLine_R1(double angle, bool flag);//Ô¤ï¿½ï¿½ï¿½ì¼£
 	void SampleLocusLine_L1(double angle, bool flag);
 	
-	void SampleLocusLine_R2(double angle, bool flag);//Ô¤ÀÀ¹ì¼£
+	void SampleLocusLine_R2(double angle, bool flag);//Ô¤ï¿½ï¿½ï¿½ì¼£
 	void SampleLocusLine_L2(double angle, bool flag);
+
+	void SampleLocusLine_R3(double angle, bool flag);//Ô¤ï¿½ï¿½ï¿½ì¼£
+	void SampleLocusLine_L3(double angle, bool flag);
 
 	int Test_CountEachDrawTime(double angle);
 	void Test_ChangeParam_ParkLine(FuncParam funPm/*ParkLineParam lineparam,CarParam carP,CameraParam camP*/);
@@ -205,11 +208,11 @@ public:
 	
 public:
 		
-	int dotNum ;       //  »­µãµÄ¸öÊý
-	double Smax ;     //   »­Ïß×îÔ¶¾àÀë
-	double SmaxRL;    //  »­Ïß×îÔ¶¾àÀë Ô¤ÀÀ¹ì¼£  
-	int start_point ; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
-	int Lstart_point ; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
+	int dotNum ;       //  ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+	double Smax ;     //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½
+	double SmaxRL;    //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ Ô¤ï¿½ï¿½ï¿½ì¼£  
+	int start_point ; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
+	int Lstart_point ; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
 	int Rstart_point ;
 
 
@@ -228,9 +231,9 @@ public:
 	double LcR;
 
 	
-	//  Wcar = 2000.0;    //   ³µ¿í
-	double Wcar;     //   Í£³µÎ»µÄ¿í
-	int Lsafe;           //  ³µÁ½±ß°²È«¼ä¸ô + ¡ª
+	//  Wcar = 2000.0;    //   ï¿½ï¿½ï¿½ï¿½
+	double Wcar;     //   Í£ï¿½ï¿½Î»ï¿½Ä¿ï¿½
+	int Lsafe;           //  ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½È«ï¿½ï¿½ï¿½ + ï¿½ï¿½
 
 	int carType;
 	int mNumF;//16???? ???
@@ -240,7 +243,7 @@ public:
 	int maxP;
 	int maxP2;
 	int maxDot;
-	int midLineY1;  //¹ì¼£ÖÐÏß¾àÀë¸ß¶È1
+	int midLineY1;  //ï¿½ì¼£ï¿½ï¿½ï¿½ß¾ï¿½ï¿½ï¿½ß¶ï¿½1
 	int midLineY2;
 	int midLineY3;
 
@@ -254,21 +257,21 @@ public:
 	double Fcar ;     // 
 
 	double P;
-	int high;            //   ÉãÏñ»ú¹âÑ§ÖÐÐÄÔÚÊÀ½çË®Æ½µØÃæµÄ¸ß¶È
-	int Vision;          //  ÉãÏñ»úÊÓ½Ç  
-	double Pu;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCDË®Æ½ Ê¹Í¼ÏñÓÒÒÆÎª+  0.01
-	double Pv;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCD´¹Ö± Ê¹Í¼ÏñÉÏÒÆÎª+  0.01
-	double Pv2;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCD´¹Ö± Ê¹Í¼ÏñÉÏÒÆÎª+  0.01
-	double x_angle;        //  ÉãÏñ»úX ·½ÏòË®Æ½½Ç¶È
+	int high;            //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
+	int Vision;          //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½  
+	double Pu;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDË®Æ½ Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	double Pv;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDï¿½ï¿½Ö± Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	double Pv2;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDï¿½ï¿½Ö± Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	double x_angle;        //  ï¿½ï¿½ï¿½ï¿½ï¿½X ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½Ç¶ï¿½
 	double y_angle;
 	double z_angle;
 
-	double Hccd ;       //  ccdÕóÁÐÃæ»ýµÄË®Æ½³¤¶È  
-	double Vccd ;       //  ccdÕóÁÐÃæ»ýµÄ´¹Ö±³¤¶È
+	double Hccd ;       //  ccdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½  
+	double Vccd ;       //  ccdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ö±ï¿½ï¿½ï¿½ï¿½
 	double Dccd ;
-	//  fccd  = Dccd/(4.0*sin((2*pi*170/4)/360.0))      //   1.70; ÉãÏñ»úµÄ½¹¾à 6.00
-	double fhccd ;      //   Ë®Æ½ÊÓ½Ç*1.8 fhccd = Hccd/(4.0*sin( (2*pi*128/2)/360.0 ))
-	//  fvccd = Vccd/(4.0*sin((2*pi*94/4)/360.0))      //   ´¹Ö±ÊÓ½Ç*1.2 fvccd =Vccd/(4.0*sin( (2*pi*94/2)/360.0 ))
+	//  fccd  = Dccd/(4.0*sin((2*pi*170/4)/360.0))      //   1.70; ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ 6.00
+	double fhccd ;      //   Ë®Æ½ï¿½Ó½ï¿½*1.8 fhccd = Hccd/(4.0*sin( (2*pi*128/2)/360.0 ))
+	//  fvccd = Vccd/(4.0*sin((2*pi*94/4)/360.0))      //   ï¿½ï¿½Ö±ï¿½Ó½ï¿½*1.2 fvccd =Vccd/(4.0*sin( (2*pi*94/2)/360.0 ))
 	double fccd ;
 	double fvccd;
 	//  Hlcd = 720.0;Vlcd = 480.0;
@@ -282,12 +285,12 @@ public:
 	float lpu;
 	float rpu;
 
-	int Zccd ;     //   ÉãÏñ»ú¹âÑ§ÖÐÐÄÔÚÊÀ½çË®Æ½µØÃæµÄ¸ß¶È
-	double XLccd ;     //   780.0ÉãÏñ»ú¹âÑ§ÖÐÐÄµÄË®Æ½Î»ÖÃ980.0
+	int Zccd ;     //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
+	double XLccd ;     //   780.0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½Äµï¿½Ë®Æ½Î»ï¿½ï¿½980.0
 	double XRccd;
-	double theta_x;    //  30 ÈÆ xÖá Ðý×ªµÄ½Ç¶ÈÊý
-	double theta_y;           //  -3 ÈÆ yÖá Ðý×ªµÄ½Ç¶ÈÊý
-	double theta_z ;           //   ÈÆ zÖá Ðý×ªµÄ½Ç¶ÈÊý
+	double theta_x;    //  30 ï¿½ï¿½ xï¿½ï¿½ ï¿½ï¿½×ªï¿½Ä½Ç¶ï¿½ï¿½ï¿½
+	double theta_y;           //  -3 ï¿½ï¿½ yï¿½ï¿½ ï¿½ï¿½×ªï¿½Ä½Ç¶ï¿½ï¿½ï¿½
+	double theta_z ;           //   ï¿½ï¿½ zï¿½ï¿½ ï¿½ï¿½×ªï¿½Ä½Ç¶ï¿½ï¿½ï¿½
 
 	double  R[3][3]; 
 	double RT13;//T = [0; 0; Zccd./cos(pi-theta_x)];
@@ -303,20 +306,20 @@ public:
 
 	///////
 	double delta;
-	double r_trk;		//Ô²»¡°ë¾¶
-	double r_trk2;		//Ô²»¡°ë¾¶
-	double alpha_max;	//Ò»¶¨»¡³¤µÄ»¡½Ç
-	double alpha_max2;	//Ò»¶¨»¡³¤µÄ»¡½Ç
+	double r_trk;		//Ô²ï¿½ï¿½ï¿½ë¾¶
+	double r_trk2;		//Ô²ï¿½ï¿½ï¿½ë¾¶
+	double alpha_max;	//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+	double alpha_max2;	//Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
 	double alpha0_L;
 	double alpha0_R;
-	double dalpha_L;//   »­Ïß½Ç¶È·Ö±æÂÊ
+	double dalpha_L;//   ï¿½ï¿½ï¿½ß½Ç¶È·Ö±ï¿½ï¿½ï¿½
 	double dalpha_R;
 
-	//  Æä¶ÔÓ¦Ô²ÐÄ×ø±ê
+	//  ï¿½ï¿½ï¿½Ó¦Ô²ï¿½ï¿½ï¿½ï¿½ï¿½
 	double a;
 	double a2;
 	double b;
-	//   ÈýÎ¬¿Õ¼ä×ø±êÏµ(Xw,Yw,Zw) ÀïµÄÇúÏß
+	//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ(Xw,Yw,Zw) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int kL;
 	int kR;
 

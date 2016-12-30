@@ -127,8 +127,37 @@ public class Main extends ListActivity {
 		if (f.IsDirectory) {
 			viewFiles(f.Path);
 		} else {
+			
+			//IntentFactory.IntentTest(Main.this, "goolgle_search", null);
+			
+			
+//			IntentFactory.IntentTest(Main.this, "home", null);
+			
+			Bundle msg = new Bundle();
+//			msg.putString("web", "http://www.baidu.com");
+//			IntentFactory.IntentTest(Main.this, "web", msg);
+			
+
+//			msg.putString("call", "tel:10086");
+//			IntentFactory.IntentTest(Main.this, "call", msg);
+			
+//			IntentFactory.IntentTest(Main.this, "capture", msg);
+			
+//		    IntentFactory.IntentTest(Main.this, "imagecrop", msg);
+			
+//			IntentFactory.IntentTest(Main.this, "wireless", msg);
+			
+	//		IntentFactory.IntentTest(Main.this, "wifisetting", msg);
+			
+	//		IntentFactory.IntentTest(Main.this, "bluetooth", msg);
+			
+	//		IntentFactory.IntentTest(Main.this, "local_setting", msg);
+			
+	//		IntentFactory.IntentTest(Main.this, "record", msg);
+			
 			setWallPaper(f.Path);
 			Main.this.finish();
+			
 			//openFile(f.Path);
 		}
 	}
@@ -159,6 +188,7 @@ public class Main extends ListActivity {
 				viewFiles(bundle.getString("CURRENTPATH"));
 			}
 		}
+		Log.d("AAAA", "onActivityResult resultCode  "+resultCode+"    requestCode "+requestCode);
 	}
 
 	/** �����˵� **/
@@ -244,8 +274,6 @@ public class Main extends ListActivity {
 		intent.setAction("com.android.intent.action.SETWALLPAPER");
 		Main.this.sendBroadcast(intent);
 	}
-//		Uri.fromFile(f)
-
 	}
 	
 	/** ������ص�ί�� **/

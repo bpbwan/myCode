@@ -1,5 +1,9 @@
 package com.flyaudio.data;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
+import com.flyaudio.backcar.MsgType;
 import com.flyaudio.object.FlyUIObj;
 
 import android.util.Log;
@@ -7,7 +11,14 @@ import android.view.View;
 
 public class DataObjBase {
 	protected int visible = -1;
+    protected boolean Updating = false;
 
+	
+	
+	public void DealTimerOver(){
+		
+	}
+	
 	public void storeProperty(byte[] data, int len) {
 		switch (data[7]) {
 		case (byte) 0xFF: {
@@ -28,6 +39,21 @@ public class DataObjBase {
 	}
 
 	public void restoreProperty(View v) {
+
+		if (!(v instanceof FlyUIObj))
+			return;
+		if (visible != -1) {
+			// Log.i("BackCarMM","restoreProperty DataObjBase visible " +
+			// visible);
+			if (visible == 1) {
+				((FlyUIObj) v).setVisibility(View.VISIBLE);
+			} else if (visible == 0) {
+				((FlyUIObj) v).setVisibility(View.GONE);
+			}
+		}
+	}
+	
+	public void DelayUpdateUi(View v) {
 
 		if (!(v instanceof FlyUIObj))
 			return;

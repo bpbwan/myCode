@@ -200,6 +200,7 @@ public class BackCarView extends SurfaceView {
 
         getHolder().addCallback(mSHCallback);
         getHolder().setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+     
     }
 	
     public void setDvr(DVR dvr){

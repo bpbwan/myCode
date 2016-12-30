@@ -161,6 +161,6 @@ public class MsgType {
 	public static final int TRACK_REBACK_TIMEOUT = 500;
 	
 	
-	
+	public static final int UI_UPDATE_TIME = 100;
 	
 }

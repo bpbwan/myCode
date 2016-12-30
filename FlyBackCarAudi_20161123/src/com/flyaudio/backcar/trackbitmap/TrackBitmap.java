@@ -59,7 +59,8 @@ public class TrackBitmap {
 	BackCarTrack mTrack;
 	Queue<Double> queue = new LinkedList<Double>();
 	private float mbuf[] = null;// new float[80];
-
+   Bitmap CurrentBmp = null;
+	
 	private double mtmp = 90;
 	private long timp2 = 0;
 	private long timp1 = 0;
@@ -176,7 +177,9 @@ public class TrackBitmap {
 			if (queue.size() != 0)
 				ret = queue.poll();
 		}catch(NoSuchElementException e){
-			
+			Log.d("DDDDD", "QueueRef  "+e);
+			queue.clear();
+			Log.d("DDDD", " OfferQueue "+queue.size() );
 		}
 			return ret;
 		}
@@ -189,7 +192,7 @@ public class TrackBitmap {
 			queue.poll();
 			}
 			}catch(Exception e){
-				
+				Log.d("DDDDD", "QueueClear  "+e);
 			}
 		}
 	}
@@ -198,6 +201,10 @@ public class TrackBitmap {
 		// Log.i(TAG, "OfferQueue data   "+data);
 		if (queue.size() >= QUEUESIZE)
 			QueueRef();
+		if(queue.size() > QUEUESIZE){
+			queue.clear();
+			Log.d("DDDD", " OfferQueue "+queue.size() );
+		}
 		queue.offer(data);
 	}
 
@@ -290,19 +297,19 @@ public class TrackBitmap {
 	public static void notifyComsumeSync(final int left_size) {
 		switch (left_size) {
 		case 0:
-			sync_sleeptime = 0;
+			sync_sleeptime = 5;
 			break;
 		case 1:
 			sync_sleeptime = 5;
 			break;
 		case 2:
-			sync_sleeptime = 10;
+			sync_sleeptime = 5;
 			break;
 		case 3:
-			sync_sleeptime = 15;
+			sync_sleeptime = 5;
 			break;
 		case 4:
-			sync_sleeptime = 30;
+			sync_sleeptime = 5;
 			break;
 		}
 		if(BaseModule.getBaseModule().DEBUG_L2)
@@ -542,7 +549,11 @@ public class TrackBitmap {
 						}
 
 					}
-
+					
+					//cap
+					if(BaseModule.getBaseModule().DEBUG_L2)
+						CurrentBmp = bplock.bp;
+					
 					bplock.unLock();
 					mBitmapQueue.OfferQueue(bplock);
 					// if(mCallback != null)
@@ -561,6 +572,8 @@ public class TrackBitmap {
 		}
 	}
 
+	
+	
 	public Bitmap comsumeBitmap() {
 		return mBitmapQueue.QueueRef("comsumebitmap");
 	}
@@ -758,5 +771,8 @@ public class TrackBitmap {
 		}
 	}
 	
-
+	public Bitmap getCurrentBmp(){
+		return CurrentBmp;
+	}
+	
 }

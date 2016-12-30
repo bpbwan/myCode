@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/STR_STA_SPKTITLE" 
+	xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+	<ListPreference android:key="downmix"
+		android:title="@string/STR_STA_DOWNMIXTITLE"
+		 android:entries="@array/trackconfuse_entries"
+		android:entryValues="@array/emergency_tone_values" />
+       <ListPreference android:key="frontspeaker"
+		android:title="@string/STR_STA_FRONTTITLE"
+		 android:entries="@array/forwardbugle_entries"
+		android:entryValues="@array/emergency_tone_values" /> 
+		  <ListPreference android:key="centerspeaker"
+		android:title="@string/STR_STA_CENTERTITLE"
+		 android:entries="@array/centerbugle_entries"
+		android:entryValues="@array/emergency_tone_values" />
+		
+		<ListPreference android:key="surroundspeaker"
+		android:title="@string/STR_STA_REARTITLE"
+		 android:entries="@array/centerbugle_entries"
+		android:entryValues="@array/emergency_tone_values" />
+		
+		<CheckBoxPreference android:key="subwooferspeaker"
+		android:title="@string/STR_STA_SUBWOOFERTITLE" 
+		android:persistent="false" android:disableDependentsState="true" />
+		
+		<ListPreference android:key="testspeaker"
+		android:title="@string/STR_STA_TESTTONETITLE"
+		android:entries="@array/bugletest_entries"
+		android:entryValues="@array/emergency_tone_values" />
+
+<!--modify for disable channel delay function
+		<com.android.settings.AudioDelayperference
+		android:key="bugledelay" android:title="@string/STR_STA_CHANNELDELAYTITLE" />
+-->
+		<PreferenceScreen android:key="channeldelay"
+		android:title="@string/STR_STA_CHANNELDELAYTITLE" />
+
+</PreferenceScreen>

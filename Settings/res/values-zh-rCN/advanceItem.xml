@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reverb_array">
+        <item>关闭</item>
+        <item>现场</item>
+        <item>大厅</item>
+        <item>音乐会</item>
+        <item>洞穴</item>
+        <item>浴室</item>
+        <item>竞技场</item>
+    </string-array>
+    <string-array name="downmix_array">
+        <item>关闭</item>
+        <item>Lt/Rt缩混</item>
+        <item>立体声缩混</item>
+    </string-array>
+    <string-array name="upmix_array">
+        <item>关闭</item>
+        <item>打开</item>
+    </string-array>
+    
+    <string-array name="prologic_array">
+        <item>关闭</item>
+        <item>音乐</item>
+        <item>电影</item>
+    </string-array>
+    <string-array name="spdifoutput_array">
+        <item>关闭</item>
+        <item>源码输出</item>
+        <item>PCM输出</item>
+    </string-array>
+    <string-array name="testtone_array">
+        <item>关闭</item>
+        <item>前排</item>
+        <item>后排</item>
+    </string-array>
+    <string-array name="mode_array">
+        <item>剧场</item>
+        <item>专家</item>
+        <item>音乐</item>
+        <item>单声道</item>
+        <item>LCRS</item>
+    </string-array>
+    <string-array name="fc_array">
+        <item>前排</item>
+        <item>后排</item>
+        <item>重低音</item>
+    </string-array>
+    <string-array name="size_array">
+        <item>40Hz</item>
+        <item>60Hz</item>
+        <item>100Hz</item>
+        <item>150Hz</item>
+        <item>200Hz</item>
+        <item>250Hz</item>
+        <item>300Hz</item>
+        <item>400Hz</item>
+    </string-array>
+</resources>

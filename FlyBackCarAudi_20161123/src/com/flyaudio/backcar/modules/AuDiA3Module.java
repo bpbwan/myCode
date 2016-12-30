@@ -129,6 +129,8 @@ public class AuDiA3Module extends AuDiA4Module {
 			removeFloatRadar(-1);
 			FloatRadarViewRemove();
 
+			///2016 1227
+	//		mBackCarModule.TurnModuleStop();
 		}
 	}
 
@@ -162,9 +164,15 @@ public class AuDiA3Module extends AuDiA4Module {
 
 	public void BackCar_StallEnter_method() {
 		needReShowVideo = true;
-
+		FloatRadarViewRemove();
 	}
 
+	public void BaseModulepreStop() {
+		super.BaseModulepreStop();
+//		if (mBackCarTrack.isTrackInit())
+//			mBackCarTrack.sendParam((byte) 0x18, 2, 0);
+	}
+	
 	public void BaseModuleStart() {
 		mBackCarService.StopTXZ();
 
@@ -188,6 +196,9 @@ public class AuDiA3Module extends AuDiA4Module {
 			mBackCar913Service.ShowBgView(2, false);
 			break;
 		default:
+			if(mBackCarModule.getBackCarState()){
+				
+				
 			FindViewWithTagAndSetVisiable(PageID.PAGE_VDO_OSD_UI_TAG,
 					View.VISIBLE);
 			View v3 = getFlyBackCarMainView()
@@ -196,11 +207,13 @@ public class AuDiA3Module extends AuDiA4Module {
 
 			if (!getEdge_trackbg_status()) {
 				v3.setVisibility(View.GONE);
+				Log.d("GL", "prestart ");
 				getFlyBackCarMainView().setCvbFronView();
 			} else {
 				mBackCar913Service.ShowBgView(2, false);
 				getGLTrackHelper().getGlview().setDraw(false);
 				v3.setVisibility(View.VISIBLE);
+			}
 			}
 		}
 	}
@@ -220,7 +233,7 @@ public class AuDiA3Module extends AuDiA4Module {
 		int ipageid = FlyaudioProperties.GetBackCarpageid();
 		Log.d(TAG, "backcarstop");
 		if (ipageid != PageID.PAGE_NOVIDEO_TIP
-				&& mBackCarService.getBackCarMode() == mBackCarService.BACKCAR_914) {
+				&& mBackCarService.mgetBackCarMode() == mBackCarService.BACKCAR_914) {
 			mBackCarModule.TurnModuleStop();
 			mBackCarModule.setBackCarLock(false);
 			mBackCarService.DealBackCarMessages(MsgType.MSG_REMOVE,
@@ -299,10 +312,27 @@ public class AuDiA3Module extends AuDiA4Module {
 					|| mBackCarService.getFlyFloatRadarView().isShowing())
 				mBackCarModule.ToModule913Close_SYS((byte) 0);
 			mBackCar913Service.keyCodeBackExit();
+			
+			mBackCarModule.ToModule913Close_SYS((byte)0);
 			FloatRadarViewRemove();
+			Log.d("DDD", "Ctr_Back_Event_method ");
+			
+			///2016 1227
+			//mBackCarModule.TurnModuleStop();
+		}
+		
+	}
 
+	public void DealActivityStop() {
+		if (mBackCarService.getReversing() && !mBackCarModule.getBackCarState()) {
+			DealBackCarMessages(MsgType.MSG_REMOVE, MsgType.GEY_FLYPAGE, null,
+					0);
+			mBackCar913Service.keyCodeBackExit();
+			FloatRadarViewRemove();
+			
 		}
 	}
+	
 
 	public void Ctr_Close_SYS_ID_method() {
 
@@ -437,6 +467,9 @@ public class AuDiA3Module extends AuDiA4Module {
 
 		if (DEBUG)
 			Log.d(TAG, "Ctr_Rear_Tone_ID_method ");
+		FlyBaseListener.UIParentViewShow(
+				FlyUtil.HexToTag(BackCarTag.Audi_F_MODE), false, false);
+		
 		FloatAddViewWithPageID(
 				PluginProxyContext.getInstance().getLayout(
 						PageID.PAGE_REAR_TONE_SET), PageID.PAGE_REAR_TONE_SET);
@@ -452,6 +485,9 @@ public class AuDiA3Module extends AuDiA4Module {
 	protected void Ctr_Front_Tone_ID_method() {
 		if (DEBUG)
 			Log.d(TAG, "Ctr_Front_Tone_ID_method ");
+		FlyBaseListener.UIParentViewShow(
+				FlyUtil.HexToTag(BackCarTag.Audi_F_MODE), false, false);
+		
 		FloatAddViewWithPageID(
 				PluginProxyContext.getInstance().getLayout(
 						PageID.PAGE_FRONT_TONE_SET), PageID.PAGE_FRONT_TONE_SET);
@@ -530,7 +566,7 @@ public class AuDiA3Module extends AuDiA4Module {
 
 	@Override
 	public void RadarGetFromLpc(byte[] paramer) {
-		if (mBackCarService.getBackCarMode() != mBackCarService.BACKCAR_SV) {
+		if (mBackCarService.mgetBackCarMode() != mBackCarService.BACKCAR_SV) {
 			Log.d("DDD", " cmd 7 paramer[1] " + paramer[1] + "  tmpRadarShow "
 					+ tmpRadarShow);
 			if (tmpRadarShow == paramer[1])
@@ -538,7 +574,10 @@ public class AuDiA3Module extends AuDiA4Module {
 			tmpRadarShow = paramer[1];
 			if (paramer[1] == 0) {
 				SystemProperties.set("fly.backcar.radar", "0");
-
+				
+			//	if (!mBackCarService.getFlyFloatRadarView().isShowing())
+					mBackCar913Service.set913StartByUser(false);
+				
 				DealBaseModuleMessages(MsgType.MSG_REMOVE,
 						MsgType.FLOATRADAR_SHOW_DELAY, 0);
 
@@ -651,7 +690,7 @@ public class AuDiA3Module extends AuDiA4Module {
 		super.Ctr_Setting_Back();
 		mBackCar913Service.setBackCarView(true);
 		if (mBackCar913Service.is913StartByUser()
-				|| mBackCarService.getBackCarMode() == mBackCarService.BACKCAR_914)
+				|| mBackCarService.mgetBackCarMode() == mBackCarService.BACKCAR_914)
 			DigIn913Mode();
 
 		mBackCarService.getFlyFloatRadarView().LayoutRemoveViewWithPageID(
@@ -716,6 +755,8 @@ public class AuDiA3Module extends AuDiA4Module {
 		if (mBackCarService.getFlyFloatRadarView().isShowing()) {
 			removeFloatRadar(PageID.PAGE_913FLOATRADAR);
 			Ctr_Setting_Back();
+			if(mBackCarService.mgetBackCarMode() != mBackCarService.BACKCAR_914)
+			mBackCarModule.ToModule913Close_SYS((byte)0);
 		} else {
 
 			showFloatRadar(PageID.PAGE_913FLOATRADAR);
@@ -806,7 +847,7 @@ public class AuDiA3Module extends AuDiA4Module {
 			FindViewWithCidAndSetVisiable(
 					BackCarTag.AUDI_913_REAR_ENUM_EDGETRACK_UI, View.GONE);
 			if (vdoway == 0) {
-				edge_trackbg_change(v2);
+//				edge_trackbg_change(v2);
 			} else {
 				FindViewWithCidAndSetVisiable(
 						BackCarTag.AUDI_913_FRONT_ENUM_EDGETRACK_UI, View.GONE);
@@ -855,24 +896,39 @@ public class AuDiA3Module extends AuDiA4Module {
 		mBackCarService.getFlyBackCarMainView().LayoutRemoveViewWithPageID(
 				PageID.PAGE_913A4SETTING);
 
-		if (!getEdge_trackbg_status())
-			mBackCar913Service.setBackGround();
-		else {
-			getGLTrackHelper().getGlview().setDraw(false);
+
+		//2016.12.30, quxiao qieuang gongneng
+	//	mBackCarModule.ShowUiView(BackCarTag.AUDI_BNT_EDGETRACK_CHANGE, false);
+//		mBackCarModule.ChangeUIObjBackground(
+//				BackCarTag.AUDI_BNT_EDGETRACK_CHANGE, (byte) 0);
+		
+//		if (!getEdge_trackbg_status()){
 			FindViewWithCidAndSetVisiable(
 					BackCarTag.AUDI_913_REAR_ENUM_EDGETRACK_UI, View.GONE);
 			FindViewWithCidAndSetVisiable(
-					BackCarTag.AUDI_913_FRONT_ENUM_EDGETRACK_UI, View.VISIBLE);
+					BackCarTag.AUDI_913_FRONT_ENUM_EDGETRACK_UI, View.GONE);
 			FindViewWithCidAndSetVisiable(
 					BackCarTag.AUDI_CVB_REAR_ENUM_EDGETRACK_UI, View.GONE);
-		}
-
-		AUDI_BNT_EDGETRACK_CHANGE_150();
+			mBackCar913Service.setBackGround();
+//		}else {
+//			getGLTrackHelper().getGlview().setDraw(false);
+//			FindViewWithCidAndSetVisiable(
+//					BackCarTag.AUDI_913_REAR_ENUM_EDGETRACK_UI, View.GONE);
+//			FindViewWithCidAndSetVisiable(
+//					BackCarTag.AUDI_913_FRONT_ENUM_EDGETRACK_UI, View.VISIBLE);
+//			FindViewWithCidAndSetVisiable(
+//					BackCarTag.AUDI_CVB_REAR_ENUM_EDGETRACK_UI, View.GONE);
+//		}
+		AUDI_BNT_EDGETRACK_CHANGE_180();
+//		AUDI_BNT_EDGETRACK_CHANGE_150();
 		sendMsgDelay(MsgType.TRACK_REBACK, MsgType.TRACK_REBACK_TIMEOUT);
 
 	}
 
 	public void AUDI_BNT_EDGETRACK_CHANGE_180() {
+		
+//		mBackCarModule.ShowUiView(BackCarTag.AUDI_BNT_EDGETRACK_CHANGE, false);
+		
 		if (!getEdge_trackbg_status())
 			mBackCarModule.ChangeUIObjBackground(
 					BackCarTag.AUDI_BNT_EDGETRACK_CHANGE, (byte) 3);
@@ -882,6 +938,7 @@ public class AuDiA3Module extends AuDiA4Module {
 	}
 
 	public void AUDI_BNT_EDGETRACK_CHANGE_150() {
+		mBackCarModule.ShowUiView(BackCarTag.AUDI_BNT_EDGETRACK_CHANGE, true);
 		if (!getEdge_trackbg_status())
 			mBackCarModule.ChangeUIObjBackground(
 					BackCarTag.AUDI_BNT_EDGETRACK_CHANGE, (byte) 0);
@@ -957,11 +1014,12 @@ public class AuDiA3Module extends AuDiA4Module {
 				BackCarTag.AUDI_913_FRONT_ENUM_EDGETRACK_UI, View.GONE);
 		FindViewWithCidAndSetVisiable(
 				BackCarTag.AUDI_CVB_REAR_ENUM_EDGETRACK_UI, View.GONE);
+
 		AUDI_BNT_EDGETRACK_CHANGE_180();
 	}
 
 	protected void Ctr_bnt_edge_trackbg_ID_method() {
-		if (mBackCarService.getBackCarMode() == mBackCarService.BACKCAR_CVB
+		if (mBackCarService.mgetBackCarMode() == mBackCarService.BACKCAR_CVB
 				&& !mBackCar913Service.is913StartByUser())
 			CVB_edge_trackbg_change();
 		else

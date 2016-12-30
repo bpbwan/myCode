@@ -15,10 +15,13 @@ public class BackCarTag {
 	public static final int STALLENTER = 0x00100002;
 
 	public static final int small_car = 0x00070120;
+	public static final int bgusb_camera = 0x00070633;
 	public static final int bgcvb = 0x00070632;
 	public static final int bg913Rear_150 = 0x00070631;
 	public static final int bg913Front_150 = 0x00070630;
 
+	public static final int RadarDistance = 0x00070500;
+	
 	public static final int RADAR_FRONT_TRACK = 0x00070601;
 	public static final int RADAR_REAR_TRACK = 0x00070602;
 

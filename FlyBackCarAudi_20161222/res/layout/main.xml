@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:flyaudio="http://schemas.android.com/apk/res/com.flyaudio.backcar"
+	android:tag="0100"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" 
+    android:orientation="vertical"
+    android:gravity="center">
+<!--  
+    <include layout="@layout/fly_camera_layout"/>
+-->
+   <com.flyaudio.object.FlyUIObj
+    android:tag="0000800c"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	 android:background="#FF000000"
+	 android:visibility="gone"
+	/>    
+	
+ <FrameLayout  android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical"   
+android:id="@+id/addViewId">
+</FrameLayout>       
+ <LinearLayout  android:layout_width="fill_parent" android:layout_height="fill_parent" android:orientation="vertical"   
+         android:focusable="false" android:clickable="false" android:id="@+id/addViewId2">
+         </LinearLayout>
+         
+
+  <!--     
+  <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/radar_bg" />
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/floatcar_bg" />
+
+        -->
+</FrameLayout>

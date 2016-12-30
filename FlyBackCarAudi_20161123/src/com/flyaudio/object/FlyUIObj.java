@@ -92,6 +92,7 @@ public class FlyUIObj extends ImageView {
 			getBackground().setLevel(imgIndex);
 		} catch (Exception e) {
 		}
+		
 		// invalidate();
 	}
 

@@ -1,0 +1,176 @@
+<resources>
+
+    <bool name="config_hardwareAccelerated">true</bool>
+    <bool name="config_largeHeap">false</bool>
+    <bool name="is_large_screen">false</bool>
+    <bool name="allow_rotation">false</bool>
+
+<!-- DragController -->
+    <integer name="config_flingToDeleteMinVelocity">-1500</integer>
+
+<!-- AllApps/Customize/AppsCustomize -->
+    <!-- The alpha of the AppsCustomize bg in spring loaded mode -->
+    <integer name="config_appsCustomizeSpringLoadedBgAlpha">45</integer>
+    <!-- Fade in/out duration of icons being dragged from the trays -->
+    <integer name="config_dragAppsCustomizeIconFadeInDuration">150</integer>
+    <integer name="config_dragAppsCustomizeIconFadeOutDuration">200</integer>
+    <integer name="config_dragAppsCustomizeIconFadeAlpha">100</integer>
+    <integer name="config_workspaceUnshrinkTime">300</integer>
+    <!-- Out of 100, the percent to shrink the workspace during spring loaded mode. -->
+    <integer name="config_workspaceSpringLoadShrinkPercentage">80</integer>
+    <!--
+         When items are dropped on the mini screens in customize mode, we have a bounce animation
+         of the bright green hover outline, and then fade out the outline at the end. These are
+         the values used in that animation
+    -->
+    <integer name="config_screenOnDropScalePercent">120</integer>
+    <integer name="config_screenOnDropScaleUpDuration">200</integer>
+    <integer name="config_screenOnDropScaleDownDuration">200</integer>
+    <integer name="config_screenOnDropAlphaFadeDelay">350</integer>
+    <integer name="config_screenOnDropAlphaFadeDuration">50</integer>
+
+    <!--
+         Fade/zoom in/out duration & scale in the AllApps transition.
+         Note: This should be less than the workspaceShrinkTime as they happen together.
+    -->
+    <integer name="config_appsCustomizeZoomInTime">300</integer>
+    <integer name="config_appsCustomizeZoomOutTime">400</integer>
+    <integer name="config_appsCustomizeZoomScaleFactor">4</integer>
+    <integer name="config_appsCustomizeFadeInTime">250</integer>
+    <integer name="config_appsCustomizeFadeOutTime">200</integer>
+    <integer name="config_appsCustomizeWorkspaceShrinkTime">300</integer>
+    <integer name="config_appsCustomizeWorkspaceAnimationStagger">10</integer>
+    <integer name="config_workspaceAppsCustomizeAnimationStagger">0</integer>
+
+    <!-- Tab transition animation duration -->
+    <integer name="config_tabTransitionDuration">250</integer>
+
+    <!-- The slope, in percent, of the drag movement needed to drag an item out of
+         AppsCustomize (y / x * 100%)  -->
+    <integer name="config_appsCustomizeDragSlopeThreshold">150</integer>
+
+    <!-- Batch loading for loading in LauncherModel -->
+    <integer name="config_allAppsBatchLoadDelay">0</integer>
+    <integer name="config_allAppsBatchSize">0</integer>
+
+<!-- Workspace -->
+    <!-- Whether or not the drop targets drop down as opposed to fade in -->
+    <bool name="config_useDropTargetDownTransition">true</bool>
+    <!-- Whether or not to fade the side pages -->
+    <bool name="config_workspaceFadeAdjacentScreens">false</bool>
+
+    <!-- The transition duration for the background of the drop targets -->
+    <integer name="config_dropTargetBgTransitionDuration">100</integer>
+    <integer name="config_crosshairsFadeInTime">600</integer>
+
+    <integer name="config_dragViewExtraPixels">40</integer>
+    <!-- The duration (in ms) of the fade animation on the object outlines, used when
+         we are dragging objects around on the home screen. -->
+    <integer name="config_dragOutlineFadeTime">900</integer>
+
+    <!-- The alpha value at which to show the most recent drop visualization outline. -->
+    <integer name="config_dragOutlineMaxAlpha">128</integer>
+
+    <!-- Parameters controlling the animation for when an item is dropped on the home screen,
+         and it animates from its old position to the new one. -->
+    <integer name="config_dropAnimMinDuration">100</integer>
+    <integer name="config_dropAnimMaxDuration">500</integer>
+
+    <!-- The duration of the UserFolder opening and closing animation -->
+    <integer name="config_folderAnimDuration">120</integer>
+
+    <!-- The distance at which the animation should take the max duration -->
+    <integer name="config_dropAnimMaxDist">800</integer>
+
+    <!-- Properties controlling the workspace fade-out during dragging -->
+    <integer name="config_workspaceScreenBitmapCacheScale">20</integer>
+    <integer name="config_dragFadeOutDuration">250</integer>
+
+    <!-- Camera distance for the overscroll effect -->
+    <integer name="config_cameraDistance">6500</integer>
+ 
+    <integer name="config_maxScaleForUsingWorkspaceScreenBitmapCache">50</integer>    
+    <!-- When shrinking the workspace, this is the percentage of its original size. -->    
+    <integer name="config_workspaceShrinkPercent">17</integer>
+
+    <!--
+         Folder max bounds and max number of items. Note: folder_max_count_x * folder_max_count_y
+         >= folder_max_num_items. When these are set to -1, they are automatically determined.
+    -->
+    <integer name="folder_max_count_x">6</integer>
+    <integer name="folder_max_count_y">2</integer>
+    <integer name="folder_max_num_items">12</integer>
+
+
+ <integer name="power_button_width">1000</integer>    
+ <integer name="button_max_of_oneline">7</integer>    
+ <color name="power_button_text_color">#ff003f</color>   
+ <color name="power_button_text_color_d">#858688</color>    
+ <color name="box_button_upColor">#FFFFFFFF</color>    
+ <color name="box_button_downColor">#FFFFFFFF</color>    
+ <integer name="box_button_m_fontSize">25</integer> <!-- 25 -->    
+ <integer name="box_button_m_offsetx">72</integer> <!-- 62 -->    
+ <integer name="box_button_m_offsety">130</integer> <!-- 120 -->    
+ <integer name="box_button_m_fontstyle">0</integer>    
+ <integer name="box_button_m_textAlign">2</integer>    
+ <integer name="box_button_btnTextLength">10</integer>    
+ <integer name="bottomMargin">95</integer>   
+ <integer name="leftMargin">9</integer>    
+ <integer name="powerWidgetLeftMargin">5</integer>    
+ <integer name="powerWidgetTopMargin">10</integer>    
+ <integer name="justOneLineLeftMargin">4</integer>    
+ <integer name="justOnetLineTopMargin">-2</integer>    
+ <integer name="firstLineLeftMargin">4</integer>    
+ <integer name="firstLineTopMargin">-2</integer>    
+ <integer name="secondLineTopMargin">2</integer>    
+ <integer name="secondLineLeftMargin">4</integer>    
+
+ <color name="menubar_button_upColor">#000000</color>    
+ <color name="menubar_button_downColor">#FFFFFFFF</color>    
+ <integer name="menubar_button_m_fontSize">35</integer> <!-- 25 -->    
+ <integer name="menubar_button_m_offsetx">100</integer> <!-- 62 -->    
+ <integer name="menubar_button_m_offsety">60</integer> <!-- 120 -->    
+ <integer name="menubar_button_m_fontstyle">0</integer>    
+ <integer name="menubar_button_m_textAlign">2</integer>    
+ <integer name="menubar_button_btnTextLength">10</integer>    
+ <integer name="main_menubar_height">98</integer>    
+ <integer name="allapp_button_leftmargin">0</integer>    
+ <string name="allapp_button_width">wrap_content</string>   
+ <integer name="allapp_button_bottommargin">0</integer>    
+ <integer name="allapp_button_cellwidth">204</integer>    
+ <integer name="droptargetbar_bottommargin">0</integer>    
+ <string name="menubar_button_leftmargin">0/206/0/0/614/818</string>    
+ <string name="menubar_button_bottommargin">0/0/0/0/0/0</string>    
+ <integer name="page_indicator_workspace_bottommargin">126</integer>    
+ <integer name="page_indicator_allapppage_bottommargin">0</integer>    
+ <integer name="workspace_cell_height">200</integer>    
+ <integer name="workspace_screen_bottompadding">113</integer>    
+ <integer name="workspace_screen_leftpadding">4</integer>    
+ <integer name="workspace_screen_toppadding">0</integer>    
+ <bool name="app_icon_need_bg">false</bool>    
+ <color name="reset_title">#ffffffff</color>    
+  
+ <integer name="screen_count">3</integer>    
+ 
+ <integer name="screen_min">3</integer>    
+
+ <integer name="screen_max">4</integer>    
+ <integer name="menubar_button_count">4</integer>    
+ <string name="button_bg">menu1/menu2/menu2/menu2/menu4/menu5</string>    
+ <string name="menubar_button_m_offsetx_param">0/0/0/0/0/0</string>    
+ <integer name="ShortcutIcon_X">63</integer>    
+ <integer name="ShortcutIcon_Y">60</integer>
+ 
+    <integer name="cell_count_x">5</integer>
+    <integer name="cell_count_y">2</integer>
+
+    <!-- Whether or not to use custom clings if a custom workspace layout is passed in -->
+    <bool name="config_useCustomClings">false</bool>
+
+<!-- Hotseat -->
+    <bool name="hotseat_transpose_layout_with_orientation">false</bool>
+    <integer name="hotseat_cell_count">6</integer>
+    <integer name="hotseat_all_apps_index">1000</integer>
+    <!-- must be between 0 and 100 -->
+    <integer name="hotseat_item_scale_percentage">100</integer>
+</resources>

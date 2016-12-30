@@ -1198,7 +1198,7 @@ public class BackCarModule {
 		 * 
 		 * ChangeMultiUIObjBackground(0x00070021, ranNumber);
 		 */
-//		testRadarRunning();
+	testRadarRunning();
 
 	}
 
@@ -1344,7 +1344,8 @@ public class BackCarModule {
 			mBackCarService.setActivityEmpty();
 			// Log.i(TAG, "removeActivity - BackCarActivity finish ");
 		}
-
+		
+		
 		exitStateReset();
 
 	}

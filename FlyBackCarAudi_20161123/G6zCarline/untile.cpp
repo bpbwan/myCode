@@ -47,7 +47,7 @@ double simple_str(char *buf)
 }
 
 
-//mbuf[0~3]  ¶¥µã×ø±êmbuf[4~7] ÖÐµã ×ø±ê   //mbuf[8~11] µ×²¿×ø±ê
+//mbuf[0~3]  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½mbuf[4~7] ï¿½Ðµï¿½ ï¿½ï¿½ï¿½   //mbuf[8~11] ï¿½×²ï¿½ï¿½ï¿½ï¿½
 //float mm[15] = {297,273,248,230,213,198,183,171,161,150,142,135,126,119,115};
 //float mm3[16] = {324,293,269,246,229,211,195,182,169,157,147,137,129,121,115,107};
 
@@ -93,11 +93,11 @@ CUntitled::CUntitled()
 	
 	  lcd_fig  = new UINT8[HEIGH+20][WIDTH+20][1];
 
-	  dotNum =800;       //  »­µãµÄ¸öÊý
-	  Smax = 3000.0;     //   »­Ïß×îÔ¶¾àÀë
+	  dotNum =800;       //  ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+	  Smax = 3000.0;     //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½
 
-	  start_point =220; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
-	  Lstart_point = 80; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
+	  start_point =220; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
+	  Lstart_point = 80; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
 	  Rstart_point = 220;
 
 	  atsafe=547;
@@ -107,7 +107,7 @@ CUntitled::CUntitled()
 	  at4m=3700;
 	  at5m=4000;
 	  Fcar = 1000.0;     // 
-	  mLine3 = 4; //±¼³ÛÖÐ¼äÏßÌõ±ÈÀýÖµ 
+	  mLine3 = 4; //ï¿½ï¿½ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ 
 	  mNum = 116;//76
 	  mNumF = 300;  //54
 	  mMinY = 108;//68
@@ -158,41 +158,41 @@ CUntitled::~CUntitled()
 }
 void CUntitled::init_Car_Pm(double Lca,double Wca,int lsa)
 {
-	 // Lcar = 2603.0;     //   ³µµÄÖá¾à
+	 // Lcar = 2603.0;     //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	  Lcar = Lca;
-	//  Wcar = 2000.0;    //   ³µ¿í
-	 Wcar = Wca;     //   Í£³µÎ»µÄ¿í
-	 Lsafe= lsa;           //  ³µÁ½±ß°²È«¼ä¸ô + ¡ª
+	//  Wcar = 2000.0;    //   ï¿½ï¿½ï¿½ï¿½
+	 Wcar = Wca;     //   Í£ï¿½ï¿½Î»ï¿½Ä¿ï¿½
+	 Lsafe= lsa;           //  ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½È«ï¿½ï¿½ï¿½ + ï¿½ï¿½
 }
 
 void CUntitled::init_Camera_InstallPm()
-{	//  P=-40;               //  ÉãÏñÍ·°²×°Æ«ÒÆË®Æ½ÖÐÐÄ  Æû³µ×ó±ß¸ºÊý 
+{	//  P=-40;               //  ï¿½ï¿½ï¿½ï¿½Í·ï¿½ï¿½×°Æ«ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ß¸ï¿½ï¿½ï¿½ 
 	 P=0;
-	 //high=850;            //   ÉãÏñ»ú¹âÑ§ÖÐÐÄÔÚÊÀ½çË®Æ½µØÃæµÄ¸ß¶È
-	 //Vision=115;          //  ÉãÏñ»úÊÓ½Ç  
-	 //Pu=0.05;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCDË®Æ½ Ê¹Í¼ÏñÓÒÒÆÎª+  0.01
-	 //Pv=0.00;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCD´¹Ö± Ê¹Í¼ÏñÉÏÒÆÎª+  0.01
-	 //x_angle=33.5;        //  ÉãÏñ»úX ·½ÏòË®Æ½½Ç¶È
+	 //high=850;            //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
+	 //Vision=115;          //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½  
+	 //Pu=0.05;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDË®Æ½ Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	 //Pv=0.00;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDï¿½ï¿½Ö± Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	 //x_angle=33.5;        //  ï¿½ï¿½ï¿½ï¿½ï¿½X ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½Ç¶ï¿½
 	 //y_angle=4.0;
 	 //z_angle=2.0;
 
-	 high=500;            //   ÉãÏñ»ú¹âÑ§ÖÐÐÄÔÚÊÀ½çË®Æ½µØÃæµÄ¸ß¶È
-	 Vision=180;          //  ÉãÏñ»úÊÓ½Ç  
-	 Pu=0.08;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCDË®Æ½ Ê¹Í¼ÏñÓÒÒÆÎª+  0.01
-	 Pv=0.03;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCD´¹Ö± Ê¹Í¼ÏñÉÏÒÆÎª+  0.01
-	 x_angle=24;        //  ÉãÏñ»úX ·½ÏòË®Æ½½Ç¶È
+	 high=500;            //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
+	 Vision=180;          //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½  
+	 Pu=0.08;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDË®Æ½ Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	 Pv=0.03;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDï¿½ï¿½Ö± Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	 x_angle=24;        //  ï¿½ï¿½ï¿½ï¿½ï¿½X ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½Ç¶ï¿½
 	 y_angle=1.0;
 	 z_angle=0.0;
 }
 void CUntitled::init_Camera_Module_insidePm()
 {
-	//   ÉãÏñ»úÄ£ÐÍ ÄÚ²¿²ÎÊý
-	 Hccd = 4.080;       //  ccdÕóÁÐÃæ»ýµÄË®Æ½³¤¶È  
-	 Vccd = 3.102;       //  ccdÕóÁÐÃæ»ýµÄ´¹Ö±³¤¶È
+	//   ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½
+	 Hccd = 4.080;       //  ccdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½  
+	 Vccd = 3.102;       //  ccdï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½Ö±ï¿½ï¿½ï¿½ï¿½
 	 Dccd = sqrt(Hccd*Hccd + Vccd*Vccd);
-	//  fccd  = Dccd/(4.0*sin((2*pi*170/4)/360.0))      //   1.70; ÉãÏñ»úµÄ½¹¾à 6.00
-	 fhccd = Hccd/(4.0*sin((2*pi*Vision/4)/360.0));      //   Ë®Æ½ÊÓ½Ç*1.8 fhccd = Hccd/(4.0*sin( (2*pi*128/2)/360.0 ))
-	//  fvccd = Vccd/(4.0*sin((2*pi*94/4)/360.0))      //   ´¹Ö±ÊÓ½Ç*1.2 fvccd =Vccd/(4.0*sin( (2*pi*94/2)/360.0 ))
+	//  fccd  = Dccd/(4.0*sin((2*pi*170/4)/360.0))      //   1.70; ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½ 6.00
+	 fhccd = Hccd/(4.0*sin((2*pi*Vision/4)/360.0));      //   Ë®Æ½ï¿½Ó½ï¿½*1.8 fhccd = Hccd/(4.0*sin( (2*pi*128/2)/360.0 ))
+	//  fvccd = Vccd/(4.0*sin((2*pi*94/4)/360.0))      //   ï¿½ï¿½Ö±ï¿½Ó½ï¿½*1.2 fvccd =Vccd/(4.0*sin( (2*pi*94/2)/360.0 ))
 	 fccd  = fhccd;
 	 fvccd = fhccd;
 	//  Hlcd = 720.0;Vlcd = 480.0;
@@ -208,13 +208,13 @@ void CUntitled::init_Camera_Module_insidePm()
 void CUntitled::init_Camera_Module_OutPm()
 {
 	// Fcar = 1000.0;     //   
-	//   ÉãÏñ»úÄ£ÐÍ Íâ²¿²ÎÊý
-	 Zccd  =high;     //   ÉãÏñ»ú¹âÑ§ÖÐÐÄÔÚÊÀ½çË®Æ½µØÃæµÄ¸ß¶È
-	 XLccd = -(Wcar*0.5 + P)- Lsafe  ;     //   780.0ÉãÏñ»ú¹âÑ§ÖÐÐÄµÄË®Æ½Î»ÖÃ980.0
+	//   ï¿½ï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ ï¿½â²¿ï¿½ï¿½ï¿½ï¿½
+	 Zccd  =high;     //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
+	 XLccd = -(Wcar*0.5 + P)- Lsafe  ;     //   780.0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½Äµï¿½Ë®Æ½Î»ï¿½ï¿½980.0
 	 XRccd = +(Wcar*0.5 - P)+ Lsafe  ;
-	 theta_x = (2*pi*(90 + x_angle))/360.0;    //  30 ÈÆ xÖá Ðý×ªµÄ½Ç¶ÈÊý
-	 theta_y = (2*pi*(y_angle))/360.0;           //  -3 ÈÆ yÖá Ðý×ªµÄ½Ç¶ÈÊý
-	 theta_z = (2*pi*(z_angle))/360.0;           //   ÈÆ zÖá Ðý×ªµÄ½Ç¶ÈÊý
+	 theta_x = (2*pi*(90 + x_angle))/360.0;    //  30 ï¿½ï¿½ xï¿½ï¿½ ï¿½ï¿½×ªï¿½Ä½Ç¶ï¿½ï¿½ï¿½
+	 theta_y = (2*pi*(y_angle))/360.0;           //  -3 ï¿½ï¿½ yï¿½ï¿½ ï¿½ï¿½×ªï¿½Ä½Ç¶ï¿½ï¿½ï¿½
+	 theta_z = (2*pi*(z_angle))/360.0;           //   ï¿½ï¿½ zï¿½ï¿½ ï¿½ï¿½×ªï¿½Ä½Ç¶ï¿½ï¿½ï¿½
 
 	 RT13 =  Zccd/cos(pi-theta_x);
 }
@@ -360,7 +360,7 @@ void CUntitled::Lineff()
 	for(int i=1;i<=dotNum;i++)
 	{
 		xwf = XLccd + (i-1)*x_dif  ;
-		ywf = -Zccd *  VTan_theta  +atsafe;                  //  adjust 390±£ÏÕ¸ËÇøÓò 800   +191.8
+		ywf = -Zccd *  VTan_theta  +atsafe;                  //  adjust 390ï¿½ï¿½ï¿½Õ¸ï¿½ï¿½ï¿½ï¿½ï¿½ 800   +191.8
 		zwf = 0;
 
 		xcf = R[0][0] * xwf + R[0][1] * ywf + R[0][2] * zwf + 0;
@@ -589,7 +589,7 @@ void CUntitled::ParkSevenLine()
 			if( ym_lcd[x]+y <0 || xm_lcd[x] < 0 )
 				return;
 
-			lcd_fig[ym_lcd[x]+y][xm_lcd[x]][0]=255;  //¶þ           at1m
+			lcd_fig[ym_lcd[x]+y][xm_lcd[x]][0]=255;  //ï¿½ï¿½           at1m
 			if(fp == 0&& x==1)
 				{
 						pBuf[8] =xm_lcd[x];
@@ -600,7 +600,7 @@ void CUntitled::ParkSevenLine()
 			if( y1m_lcd[x]+y <0 || x1m_lcd[x] < 0 )
 				return;
 
-			lcd_fig[y1m_lcd[x]+y][x1m_lcd[x]][0]=255;  //Èý        at2m
+			lcd_fig[y1m_lcd[x]+y][x1m_lcd[x]][0]=255;  //ï¿½ï¿½        at2m
 			if(fp == 2&& x==dotNum)
 				{
 						pBuf[10] =x1m_lcd[x];
@@ -611,7 +611,7 @@ void CUntitled::ParkSevenLine()
 			if( y2m_lcd[x]+y <0 || x2m_lcd[x] < 0 )
 				return;
 
-			lcd_fig[y2m_lcd[x]+y][x2m_lcd[x]][0]=255;  //ËÄ        at3m
+			lcd_fig[y2m_lcd[x]+y][x2m_lcd[x]][0]=255;  //ï¿½ï¿½        at3m
 			if(fp == 4&& x==1)
 				{
 						pBuf[12] =x2m_lcd[x];
@@ -620,7 +620,7 @@ void CUntitled::ParkSevenLine()
 				}
 
 
-			lcd_fig[y3m_lcd[x]+y][x3m_lcd[x]][0]=255;  //Îå            at4m
+			lcd_fig[y3m_lcd[x]+y][x3m_lcd[x]][0]=255;  //ï¿½ï¿½            at4m
 			if(pp == 2&&x>dotNum/2) {				
 						pBuf[2] =x3m_lcd[x];
 						pBuf[3] =y3m_lcd[x]+y;
@@ -648,7 +648,7 @@ void CUntitled::ParkSevenLine()
 			{
 				if(yl_lcd[i]+y < 0 || xl_lcd[i]+x < 0  )
 					return;
-				lcd_fig[yl_lcd[i]+y][xl_lcd[i]+x][0]=255;    // ×ó µ×ÏÂ
+				lcd_fig[yl_lcd[i]+y][xl_lcd[i]+x][0]=255;    // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 				if(pp == 6) {
 						pBuf[6] =xl_lcd[i]+x;
 						pBuf[7] =yl_lcd[i]+y;
@@ -660,7 +660,7 @@ void CUntitled::ParkSevenLine()
 					{
 						if( yr_lcd[i]+y < 0 || xr_lcd[i]+x < 0 )
 							return;
-						lcd_fig[yr_lcd[i]+y][xr_lcd[i]+x][0]=255;  //ÓÒµ×²ã
+						lcd_fig[yr_lcd[i]+y][xr_lcd[i]+x][0]=255;  //ï¿½Òµ×²ï¿½
 						if(pp == 4) {
 								pBuf[4] =xr_lcd[i]+x;
 								pBuf[5] =yr_lcd[i]+y;
@@ -692,14 +692,14 @@ int p = 0;
 void CUntitled::DrawParkLine()
 {
    LOG("DrawParkLine");
-   Linefl();	// ÓÒ	 Ïß
-   Linefr();	// ×ó	 Ïß
-   Lineff();	// ÖÐ 1 ºÅÏß
-   Linefm();	// ÖÐ 2 ºÅÏß
-   Linef1m();	// ÖÐ 3 ºÅÏß
-   Linef2m();	// ÖÐ 4 ºÅÏß
-   Linef3m();	// ÖÐ 5 ºÅÏß
-   ParkSevenLine();// ×ª»»³ÉÊÓ¾õ¡°Õý°Ë×ÖÍ¼¡±
+   Linefl();	// ï¿½ï¿½	 ï¿½ï¿½
+   Linefr();	// ï¿½ï¿½	 ï¿½ï¿½
+   Lineff();	// ï¿½ï¿½ 1 ï¿½ï¿½ï¿½ï¿½
+   Linefm();	// ï¿½ï¿½ 2 ï¿½ï¿½ï¿½ï¿½
+   Linef1m();	// ï¿½ï¿½ 3 ï¿½ï¿½ï¿½ï¿½
+   Linef2m();	// ï¿½ï¿½ 4 ï¿½ï¿½ï¿½ï¿½
+   Linef3m();	// ï¿½ï¿½ 5 ï¿½ï¿½ï¿½ï¿½
+   ParkSevenLine();// ×ªï¿½ï¿½ï¿½ï¿½ï¿½Ó¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½
 
 }
 
@@ -826,6 +826,10 @@ void CUntitled::SwitchTrackUsingMode(){
 				LocusLine_R  = &CUntitled::SampleLocusLine_R2;
 				LocusLine_L = &CUntitled::SampleLocusLine_L2;
 				break;
+		case 3:
+				LocusLine_R  = &CUntitled::SampleLocusLine_R3;
+				LocusLine_L = &CUntitled::SampleLocusLine_L3;
+				break;
 		}
 
 }
@@ -871,7 +875,7 @@ void CUntitled::SampleLocusLine_L1(double angle, bool isSaveFile)
 	
 
 	dx = Hccd/Hlcd;  
-	dy = Vccd/Vlcd;    //   ÏóËØ¼ä¾àÀë
+	dy = Vccd/Vlcd;    //   ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½
 
 	int  lWidth=width,lHeight=height;
 	memset(lcd_fig,0,my_h*MaxWIDTH*1);
@@ -896,31 +900,31 @@ void CUntitled::SampleLocusLine_L1(double angle, bool isSaveFile)
 		LcL = Lcar;  //for guiji measure
 		else Lcar = LcL;
 	delta = (2.0*pi*N)/360.0;
-	r_trk = Lcar/tan(delta);   //   Ô²»¡°ë¾¶
+	r_trk = Lcar/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
 		//LcL = Lcar;
-	r_trk2 = LcL/tan(delta);   //   Ô²»¡°ë¾¶
-	alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));    //   Ò»¶¨»¡³¤µÄ»¡½Ç
-	alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));	 //   Ò»¶¨»¡³¤µÄ»¡½Ç
+	r_trk2 = LcL/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+	alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));    //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+	alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));	 //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
 
 
 		alpha0_L  = asin((Fcar + Lstart_point)/(r_trk-Wcar/2));
 		alpha0_R  = asin((Fcar + Rstart_point)/(r_trk2+Wcar/2));
-		dalpha_L = (alpha_max -alpha0_L)/(dotNum-1);    //   »­Ïß½Ç¶È·Ö±æÂÊ
+		dalpha_L = (alpha_max -alpha0_L)/(dotNum-1);    //   ï¿½ï¿½ï¿½ß½Ç¶È·Ö±ï¿½ï¿½ï¿½
 		dalpha_R = (alpha_max2 -alpha0_R)/(dotNum-1);
 
-		//  Æä¶ÔÓ¦Ô²ÐÄ×ø±ê
+		//  ï¿½ï¿½ï¿½Ó¦Ô²ï¿½ï¿½ï¿½ï¿½ï¿½
 		a = -r_trk + (XLccd+XRccd)/2;
 		a2 = -r_trk2 + (XLccd+XRccd)/2;
 		b = Zccd*tan(theta_x) - Fcar;
 
-		//   ÈýÎ¬¿Õ¼ä×ø±êÏµ(Xw,Yw,Zw) ÀïµÄÇúÏß
+		//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ(Xw,Yw,Zw) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		kL=0; 
 		kR=0;
 
 		//  *********************************************
-		//   ÈýÎ¬¿Õ¼ä×ø±êÏµ µ½ ÉãÏñ»ú×ø±êÏµ µÄ±ä»»
+		//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½Ä±ä»»
 		//      (Xw,Yw,Zw) => (Xc,Yc,Zc)
-		//   ÉãÏñ»ú×ø±ê ºÍ ÏñÆ½Ãæ×ø±ê µÄÕë¿×Í¸ÊÓ±ä»»
+		//   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½Ó±ä»»
 		//   (Xc,Yc,Zc) => (Xu,Yu)
 		//  *********************************************
 		//for i = 1:1:dotNum
@@ -1173,7 +1177,7 @@ void CUntitled::SampleLocusLine_R1(double angle, bool isSaveFile)
 		double mPu = Pu;
 	
 		dx = Hccd/Hlcd;  
-		dy = Vccd/Vlcd;    //   ÏóËØ¼ä¾àÀë
+		dy = Vccd/Vlcd;    //   ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½
 
 		int  lWidth=width,lHeight=height;
 
@@ -1197,15 +1201,15 @@ void CUntitled::SampleLocusLine_R1(double angle, bool isSaveFile)
 			Lcar=LcR;
 
 			delta = (2.0*pi*N)/360.0;
-			r_trk = Lcar/tan(delta);   //   Ô²»¡°ë¾¶
+			r_trk = Lcar/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
 			//LcR=Lcar;
-			r_trk2 = LcR/tan(delta);   //   Ô²»¡°ë¾¶
-			alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));      //   Ò»¶¨»¡³¤µÄ»¡½Ç
-			alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));      //   Ò»¶¨»¡³¤µÄ»¡½Ç
+			r_trk2 = LcR/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+			alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));      //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+			alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));      //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
 	
 			alpha0_L  = asin((Fcar +Lstart_point)/(r_trk2+Wcar/2));
 			alpha0_R  = asin((Fcar +Rstart_point)/(r_trk-Wcar/2));
-			dalpha_L = (alpha_max2 -alpha0_L)/(dotNum-1);    //   »­Ïß½Ç¶È·Ö±æÂÊ
+			dalpha_L = (alpha_max2 -alpha0_L)/(dotNum-1);    //   ï¿½ï¿½ï¿½ß½Ç¶È·Ö±ï¿½ï¿½ï¿½
 			dalpha_R = (alpha_max -alpha0_R)/(dotNum-1);
 
 
@@ -1213,14 +1217,14 @@ void CUntitled::SampleLocusLine_R1(double angle, bool isSaveFile)
 			a2 = r_trk2 + (XLccd+XRccd)/2;
 			b = Zccd*tan(theta_x) - Fcar;
 
-			//   ÈýÎ¬¿Õ¼ä×ø±êÏµ(Xw,Yw,Zw) ÀïµÄÇúÏß
+			//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ(Xw,Yw,Zw) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			kL=0; 
 			kR=0;
 
 			//  *********************************************
-			//   ÈýÎ¬¿Õ¼ä×ø±êÏµ µ½ ÉãÏñ»ú×ø±êÏµ µÄ±ä»»
+			//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½Ä±ä»»
 			//      (Xw,Yw,Zw) => (Xc,Yc,Zc)
-			//   ÉãÏñ»ú×ø±ê ºÍ ÏñÆ½Ãæ×ø±ê µÄÕë¿×Í¸ÊÓ±ä»»
+			//   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½Ó±ä»»
 			//   (Xc,Yc,Zc) => (Xu,Yu)
 			//  *********************************************
 
@@ -1337,14 +1341,14 @@ void CUntitled::SampleLocusLine_R1(double angle, bool isSaveFile)
 					{
 						if(/*yddr[i]>((mMinY-N)-(int)0.4*N)&&*/yddr[i]+y < Na)
 						{
-						//	lcd_fig[yddr[i]+y][xddr[i]+x][1]=255;  //ÓÒÏß
-						lcd_fig[yddr[i]+y][xddr[i]+x][0]=255;  //ÓÒÏß
+						//	lcd_fig[yddr[i]+y][xddr[i]+x][1]=255;  //ï¿½ï¿½ï¿½ï¿½
+						lcd_fig[yddr[i]+y][xddr[i]+x][0]=255;  //ï¿½ï¿½ï¿½ï¿½
 						}
 
  						if(yddl[i]>(mMinY-7*N/50)&&yddl[i]+y<Nb) 
  						{ 
-						//	lcd_fig[yddl[i]+y][(xddl[i]+x)][1]=255;  //×óÏß
-							lcd_fig[yddl[i]+y][(xddl[i]+x)][0]=255;  //×óÏß
+						//	lcd_fig[yddl[i]+y][(xddl[i]+x)][1]=255;  //ï¿½ï¿½ï¿½ï¿½
+							lcd_fig[yddl[i]+y][(xddl[i]+x)][0]=255;  //ï¿½ï¿½ï¿½ï¿½
 							if(mflag == 0)
 							{	mBuf[2] = xddl[i];
 								mBuf[3] = yddl[i];
@@ -1479,7 +1483,7 @@ void CUntitled::SampleLocusLine_L2(double angle, bool isSaveFile)
 	
 
 	dx = Hccd/Hlcd;  
-	dy = Vccd/Vlcd;    //   ÏóËØ¼ä¾àÀë
+	dy = Vccd/Vlcd;    //   ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½
 
 	int  lWidth=width,lHeight=height;
 	memset(lcd_fig,0,my_h*MaxWIDTH*1);
@@ -1504,24 +1508,24 @@ void CUntitled::SampleLocusLine_L2(double angle, bool isSaveFile)
 		LcL = Lcar;  //for guiji measure
 		else Lcar = LcL;
 	delta = (2.0*pi*N)/360.0;
-	r_trk = Lcar/tan(delta);   //   Ô²»¡°ë¾¶
+	r_trk = Lcar/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
 		//LcL = Lcar;
-	r_trk2 = LcL/tan(delta);   //   Ô²»¡°ë¾¶
-	alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));    //   Ò»¶¨»¡³¤µÄ»¡½Ç
-	alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));	 //   Ò»¶¨»¡³¤µÄ»¡½Ç
+	r_trk2 = LcL/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+	alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));    //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+	alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));	 //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
 
 
 		alpha0_L  = asin((Fcar + Lstart_point)/(r_trk-Wcar/2));
 		alpha0_R  = asin((Fcar + Rstart_point)/(r_trk2+Wcar/2));
-		dalpha_L = (alpha_max -alpha0_L)/(dotNum-1);    //   »­Ïß½Ç¶È·Ö±æÂÊ
+		dalpha_L = (alpha_max -alpha0_L)/(dotNum-1);    //   ï¿½ï¿½ï¿½ß½Ç¶È·Ö±ï¿½ï¿½ï¿½
 		dalpha_R = (alpha_max2 -alpha0_R)/(dotNum-1);
 
-		//  Æä¶ÔÓ¦Ô²ÐÄ×ø±ê
+		//  ï¿½ï¿½ï¿½Ó¦Ô²ï¿½ï¿½ï¿½ï¿½ï¿½
 		a = -r_trk + (XLccd+XRccd)/2;
 		a2 = -r_trk2 + (XLccd+XRccd)/2;
 		b = Zccd*tan(theta_x) - Fcar;
 
-		//   ÈýÎ¬¿Õ¼ä×ø±êÏµ(Xw,Yw,Zw) ÀïµÄÇúÏß
+		//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ(Xw,Yw,Zw) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		kL=0; 
 		kR=0;
 
@@ -1682,7 +1686,7 @@ void CUntitled::SampleLocusLine_R2(double angle, bool isSaveFile)
 		double mPu = Pu;
 	
 		dx = Hccd/Hlcd;  
-		dy = Vccd/Vlcd;    //   ÏóËØ¼ä¾àÀë
+		dy = Vccd/Vlcd;    //   ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½
 
 		int  lWidth=width,lHeight=height;
 
@@ -1706,15 +1710,15 @@ void CUntitled::SampleLocusLine_R2(double angle, bool isSaveFile)
 			Lcar=LcR;
 
 			delta = (2.0*pi*N)/360.0;
-			r_trk = Lcar/tan(delta);   //   Ô²»¡°ë¾¶
+			r_trk = Lcar/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
 			//LcR=Lcar;
-			r_trk2 = LcR/tan(delta);   //   Ô²»¡°ë¾¶
-			alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));      //   Ò»¶¨»¡³¤µÄ»¡½Ç
-			alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));      //   Ò»¶¨»¡³¤µÄ»¡½Ç
+			r_trk2 = LcR/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+			alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));      //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+			alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));      //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
 	
 			alpha0_L  = asin((Fcar +Lstart_point)/(r_trk2+Wcar/2));
 			alpha0_R  = asin((Fcar +Rstart_point)/(r_trk-Wcar/2));
-			dalpha_L = (alpha_max2 -alpha0_L)/(dotNum-1);    //   »­Ïß½Ç¶È·Ö±æÂÊ
+			dalpha_L = (alpha_max2 -alpha0_L)/(dotNum-1);    //   ï¿½ï¿½ï¿½ß½Ç¶È·Ö±ï¿½ï¿½ï¿½
 			dalpha_R = (alpha_max -alpha0_R)/(dotNum-1);
 
 
@@ -1722,14 +1726,14 @@ void CUntitled::SampleLocusLine_R2(double angle, bool isSaveFile)
 			a2 = r_trk2 + (XLccd+XRccd)/2;
 			b = Zccd*tan(theta_x) - Fcar;
 
-			//   ÈýÎ¬¿Õ¼ä×ø±êÏµ(Xw,Yw,Zw) ÀïµÄÇúÏß
+			//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ(Xw,Yw,Zw) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			kL=0; 
 			kR=0;
 
 			//  *********************************************
-			//   ÈýÎ¬¿Õ¼ä×ø±êÏµ µ½ ÉãÏñ»ú×ø±êÏµ µÄ±ä»»
+			//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½Ä±ä»»
 			//      (Xw,Yw,Zw) => (Xc,Yc,Zc)
-			//   ÉãÏñ»ú×ø±ê ºÍ ÏñÆ½Ãæ×ø±ê µÄÕë¿×Í¸ÊÓ±ä»»
+			//   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½Ó±ä»»
 			//   (Xc,Yc,Zc) => (Xu,Yu)
 			//  *********************************************
 
@@ -1848,12 +1852,12 @@ void CUntitled::SampleLocusLine_R2(double angle, bool isSaveFile)
 					{
 						if(yddr[i]>(mMinY-7*N/50)&&yddr[i]+y < maxY)
 						{
-						lcd_fig[yddr[i]+y][xddr[i]+x][0]=255;  //ÓÒÏß
+						lcd_fig[yddr[i]+y][xddr[i]+x][0]=255;  //ï¿½ï¿½ï¿½ï¿½
 						}
 
  						if(yddl[i]>(mMinY-7*N/50)&&yddl[i]+y<maxY) 
  						{ 
-							lcd_fig[yddl[i]+y][(xddl[i]+x)][0]=255;  //×óÏß
+							lcd_fig[yddl[i]+y][(xddl[i]+x)][0]=255;  //ï¿½ï¿½ï¿½ï¿½
 							
 						}
 					}
@@ -1890,7 +1894,435 @@ void CUntitled::SampleLocusLine_R2(double angle, bool isSaveFile)
 
 }
 							
+void CUntitled::SampleLocusLine_L3(double angle, bool isSaveFile)
+{
+	int al =91-angle;
+	al = -al;
+	int N = int(al);
 
+	double xwl,ywl,zwl;
+	double xur,yur;
+
+	double xwr,ywr,zwr;
+	double xul,yul;
+	double lambda;
+
+	double dxfr,dyfr;
+	double dxfl,dyfl;
+	double mPu = Pu;
+
+	int m1 = dotNum-1;
+	int nn = 0, mmr =16, mi = 0, mml = 18;
+	int mm5=0;
+	int fl = 0;
+
+
+	dx = Hccd/Hlcd;
+	dy = Vccd/Vlcd;    //   ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½
+
+	int  lWidth=width,lHeight=height;
+	memset(lcd_fig,0,my_h*MaxWIDTH*1);
+
+	memset(xddl,0,pointnum*4);
+	memset(yddl,0,pointnum*4);
+	memset(xddr,0,pointnum*4);
+	memset(yddr,0,pointnum*4);
+	memset(mBuf,0,MSIZE);
+		if(N!=-1)
+		mPu += (N)*lpu/50;				//0.1 most left
+		u0 = Hccd/2.0+mPu;
+		//__android_log_print(4, "BCR", "mPu	 %f\n",mPu);
+		Pv2 = Pv;
+		//if(N!=-1)
+			//Pv2 -= 0.15*N/50; ///0.2
+		v02 = Vccd/2.0+Pv2;
+
+	//if( !DEBUG_MODE)
+	//	Lcar = LcL;  //for guiji measure
+	if( DEBUG_MODE)
+		LcL = Lcar;  //for guiji measure
+		else Lcar = LcL;
+	delta = (2.0*pi*N)/360.0;
+	r_trk = Lcar/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+		//LcL = Lcar;
+	r_trk2 = LcL/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+	alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));    //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+	alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));	 //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+
+
+		alpha0_L  = asin((Fcar + Lstart_point)/(r_trk-Wcar/2));
+		alpha0_R  = asin((Fcar + Rstart_point)/(r_trk2+Wcar/2));
+		dalpha_L = (alpha_max -alpha0_L)/(dotNum-1);    //   ï¿½ï¿½ï¿½ß½Ç¶È·Ö±ï¿½ï¿½ï¿½
+		dalpha_R = (alpha_max2 -alpha0_R)/(dotNum-1);
+
+		//  ï¿½ï¿½ï¿½Ó¦Ô²ï¿½ï¿½ï¿½ï¿½ï¿½
+		a = -r_trk + (XLccd+XRccd)/2;
+		a2 = -r_trk2 + (XLccd+XRccd)/2;
+		b = Zccd*tan(theta_x) - Fcar;
+
+		//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ(Xw,Yw,Zw) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		kL=0;
+		kR=0;
+
+		for(int i=1;i<=dotNum;i++)
+		{
+			alphaL = dalpha_L*(i -kL*2) +alpha0_L;
+			xwl = a + (r_trk-Wcar/2  - Lsafe )*cos(alphaL);
+			ywl = b + (r_trk-Wcar/2  - Lsafe )*sin(alphaL);
+			zwl = 0;
+
+			xur = fhccd * (R[0][0]*xwl + R[0][1]*ywl + R[0][2]*zwl) / (R[2][0]*xwl + R[2][1]*ywl + R[2][2]*zwl + RT13);
+			yur = fvccd * (R[1][0]*xwl + R[1][1]*ywl + R[1][2]*zwl) / (R[2][0]*xwl + R[2][1]*ywl + R[2][2]*zwl + RT13);
+
+			lambda = sqrt(xur*xur+yur*yur)/fccd;
+			dxfr = (2.0*xur*sin((atan(lambda))/2))/lambda;
+			dyfr = (2.0*yur*sin((atan(lambda))/2))/lambda;
+
+			xddr[i] = UINT16(abs((-dxfr+u0)/dx));
+			yddr[i] = UINT16((dyfr+v0)/dy);
+
+			//  *********************************************
+			//  *********************************************
+
+			alphaR = dalpha_R*(i -kR*2) +alpha0_R;
+			xwr  = a2 + (r_trk2+Wcar/2 + Lsafe  )*cos(alphaR);
+			ywr = b + (r_trk2+Wcar/2 + Lsafe  )*sin(alphaR);
+			zwr = 0;
+
+			xul = fhccd*(R[0][0]*xwr + R[0][1]*ywr + R[0][2]*zwr)/(R[2][0]*xwr + R[2][1]*ywr + R[2][2]*zwr + RT13);
+			yul = fvccd*(R[1][0]*xwr + R[1][1]*ywr + R[1][2]*zwr)/(R[2][0]*xwr + R[2][1]*ywr + R[2][2]*zwr + RT13);
+
+			lambda = sqrt(xul*xul+yul*yul)/fccd;
+			dxfl = 2.0*xul*sin((atan(lambda))/2)/lambda;
+			dyfl = 2.0*yul*sin((atan(lambda))/2)/lambda;
+
+			xddl[i] = UINT16(abs((-dxfl+u0)/dx));
+			yddl[i] = UINT16((dyfl+v02)/dy);
+
+			//	if(i==m4||i==m3||i==m1||i==m2)
+			if(i==m1) // two line
+			{
+				mBuf[2] = xddl[i];
+				mBuf[3] = yddl[i];
+
+				mBuf[0] = xddr[i];
+				mBuf[1] = yddr[i];
+			}
+			else if(midLineY1 == i){
+				midDotLine[2] = xddl[i];
+				midDotLine[3] = yddl[i];
+
+				midDotLine[0] = xddr[i];
+				midDotLine[1] = yddr[i];
+
+				}
+			else if(midLineY2 == i){
+				midDotLine[6] = xddl[i];
+				midDotLine[7] = yddl[i];
+
+				midDotLine[4] = xddr[i];
+				midDotLine[5] = yddr[i];
+
+				}
+			else if(midLineY3 == i){
+				midDotLine[10] = xddl[i];
+				midDotLine[11] = yddl[i];
+
+				midDotLine[8] = xddr[i];
+				midDotLine[9] = yddr[i];
+
+				}
+
+		}
+
+		DrawALine((int)mBuf[2], (int)mBuf[3], (int)mBuf[0], (int)mBuf[1], 1);
+		DrawALine((int)midDotLine[2], (int)midDotLine[3], (int)midDotLine[0], (int)midDotLine[1], 1);
+		DrawALine((int)midDotLine[6], (int)midDotLine[7], (int)midDotLine[4], (int)midDotLine[5], 1);
+		DrawALine((int)midDotLine[10], (int)midDotLine[11], (int)midDotLine[8], (int)midDotLine[9], 1);
+
+		int p = 0;
+		int mA = 2;
+		int mB =-2;
+		int mflag = 0;
+		int dotN =0;
+		float maxl,maxr;
+		float mtmp;
+
+				for(int i=1; i<=dotNum;i++)
+				{
+
+					for(int x=mB;x<=mA;x++)
+					{
+						for(int y=-1;y<=0;y++)
+						{
+
+						if(yddr[i]>(mMinY-7*N/50)&&(yddr[i]+y)<maxY)
+						{	lcd_fig[yddr[i]+y][xddr[i]+x][0]=255;
+						}
+						if(yddl[i]>(mMinY-7*N/50)&&(yddl[i]+y)<maxY)
+							{
+							lcd_fig[yddl[i]+y][(xddl[i]+x)][0]=255;
+							}
+						}
+					}
+
+			}
+
+				for(int j=1;j<=height;j++)
+				{
+					for(int i=1;i<=width;i++)
+					{
+						if(lcd_fig[(j-1)][i][0] != 0){
+							if(isSaveFile)
+							{
+								RLBuf2[p] =i-1;
+								RLBuf2[p+1]=j-1;
+							}
+							else {
+								RLBuf[p] =i-1;
+								RLBuf[p+1]=j-1;
+							}
+						p+=2;
+						}
+					}
+
+				}
+				if(isSaveFile)
+					maxP2 = p;
+					else
+					maxP = p;
+				//__android_log_print(4, "BCR", "P_R	 %d\n",p);
+
+		return ;
+}
+
+
+
+void CUntitled::SampleLocusLine_R3(double angle, bool isSaveFile)
+{
+		int al = angle-90;
+		al = -al;
+		int N = al;
+
+
+		//  *********************************************LC ,WC, Fcar, SmaxRL,dotNum
+		double xwl,ywl,zwl;
+		double xur,yur;
+
+		double xwr,ywr,zwr;
+		double xul,yul;
+		double lambdal;
+		double lambdar;
+		double mPu = Pu;
+
+		dx = Hccd/Hlcd;
+		dy = Vccd/Vlcd;    //   ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½ï¿½ï¿½
+
+		int  lWidth=width,lHeight=height;
+
+		memset(lcd_fig,0,my_h*MaxWIDTH*1);
+
+		memset(xddl,0,pointnum*4);
+		memset(yddl,0,pointnum*4);
+		memset(xddr,0,pointnum*4);
+		memset(yddr,0,pointnum*4);
+		memset(mBuf,0,MSIZE);
+		mPu += (-N)*rpu/50;				//0.1 most right
+		 u0 = Hccd/2.0+mPu;
+		Pv2 = Pv;
+			//Pv2 -= 0.15*N/50;
+		         v02 = Vccd/2.0+Pv2;
+		//	Lcar = LcR; // measure test
+
+		if( DEBUG_MODE)
+			LcR=Lcar;
+		else
+			Lcar=LcR;
+
+			delta = (2.0*pi*N)/360.0;
+			r_trk = Lcar/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+			//LcR=Lcar;
+			r_trk2 = LcR/tan(delta);   //   Ô²ï¿½ï¿½ï¿½ë¾¶
+			alpha_max = SmaxRL/(r_trk+Wcar/2) +asin(Fcar/(r_trk+Wcar/2));      //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+			alpha_max2 = SmaxRL/(r_trk2+Wcar/2) +asin(Fcar/(r_trk2+Wcar/2));      //   Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½
+
+			alpha0_L  = asin((Fcar +Lstart_point)/(r_trk2+Wcar/2));
+			alpha0_R  = asin((Fcar +Rstart_point)/(r_trk-Wcar/2));
+			dalpha_L = (alpha_max2 -alpha0_L)/(dotNum-1);    //   ï¿½ï¿½ï¿½ß½Ç¶È·Ö±ï¿½ï¿½ï¿½
+			dalpha_R = (alpha_max -alpha0_R)/(dotNum-1);
+
+
+			a = r_trk + (XLccd+XRccd)/2;
+			a2 = r_trk2 + (XLccd+XRccd)/2;
+			b = Zccd*tan(theta_x) - Fcar;
+
+			//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ(Xw,Yw,Zw) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+			kL=0;
+			kR=0;
+
+			//  *********************************************
+			//   ï¿½ï¿½Î¬ï¿½Õ¼ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ ï¿½Ä±ä»»
+			//      (Xw,Yw,Zw) => (Xc,Yc,Zc)
+			//   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Æ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½Ó±ä»»
+			//   (Xc,Yc,Zc) => (Xu,Yu)
+			//  *********************************************
+
+			double dxfr,dyfr;
+			double dxfl,dyfl;
+			double dxcr,dycr,dzcr;
+			double dxcl,dycl,dzcl;
+			int m1 = dotNum;
+			float maxl,maxr;
+			int mmr =16, mi = 0, mml = 18;
+			int mm5 = 0;
+			int cutnum;
+			for(int i=1;i<=dotNum;i++)
+			{
+				alphaL = pi -(dalpha_L*(i -kL*2) +alpha0_L);
+				xwl = a2 + (r_trk2+Wcar/2 +Lsafe)*cos(alphaL);
+				ywl = b + (r_trk2+Wcar/2 +Lsafe)*sin(alphaL);
+				zwl = 0;
+
+				alphaR = pi -(dalpha_R*(i -kR*2) +alpha0_R);
+				xwr = a + (r_trk-Wcar/2 -Lsafe  )*cos(alphaR);
+				ywr = b + (r_trk-Wcar/2 -Lsafe  )*sin(alphaR);
+				zwr = 0;
+
+				//B()
+				dxcr = R[0][0]*xwl + R[0][1]*ywl + R[0][2]*zwl;
+				dycr = R[1][0]*xwl + R[1][1]*ywl + R[1][2]*zwl;
+				dzcr = R[2][0]*xwl + R[2][1]*ywl + R[2][2]*zwl + RT13;
+
+				//C()
+				dxcl = R[0][0]*xwr + R[0][1]*ywr + R[0][2]*zwr;
+				dycl = R[1][0]*xwr + R[1][1]*ywr + R[1][2]*zwr;
+				dzcl = R[2][0]*xwr + R[2][1]*ywr + R[2][2]*zwr + RT13;
+
+				xul = fhccd*(dxcl)/(dzcl);
+				yul = fvccd*(dycl)/(dzcl);
+
+				lambdal = sqrt(xul*xul+yul*yul)/fccd;
+				dxfl = 2.0*xul*sin((atan(lambdal))/2)/lambdal;
+				dyfl = 2.0*yul*sin((atan(lambdal))/2)/lambdal;
+
+
+				xur = fhccd*(dxcr)/(dzcr);
+				yur = fvccd*(dycr)/(dzcr);
+
+				cutnum = ceil((sqrt(xur*xur+yur*yur)/fccd)*10000);
+				lambdar = (cutnum+1e-8)/10000;
+
+				 dxfr  = 2.0*xur*sin((atan(lambdar))/2)/lambdar;
+				 dyfr  = 2.0*yur*sin((atan(lambdar))/2)/lambdar;
+
+				xddl[i] = UINT16(abs((-dxfl+u0)/dx));			// 		xdl = uint16( (-xfl + u0)./dx );
+				if ((-dxfl+u0)<0)
+				{
+					xddl[i] =-4;
+				}
+
+				yddl[i] = UINT16((dyfl+v0)/dy);		// 		ydl = uint16( (yfl + v0)./dy );
+				xddr[i] = UINT16(abs((-dxfr+u0)/dx)); // 		xdr = uint16( (-xfr + u0)./dx );
+				yddr[i] = UINT16((dyfr+v02)/dy); // 		ydr = uint16( (yfr + v0)./dy );
+
+			//	if(i==(int)dotNum/mLine3)
+		//		{
+			//		mBuf[6] = xddl[i];
+			//		mBuf[7] = yddl[i];
+			//	}
+
+				if(i==m1) // two line
+						{
+							mBuf[2] = xddl[i];
+							mBuf[3] = yddl[i];
+
+							mBuf[0] = xddr[i];
+							mBuf[1] = yddr[i];
+						}
+						else if(midLineY1 == i){
+							midDotLine[2] = xddl[i];
+							midDotLine[3] = yddl[i];
+
+							midDotLine[0] = xddr[i];
+							midDotLine[1] = yddr[i];
+
+							}
+						else if(midLineY2 == i){
+							midDotLine[6] = xddl[i];
+							midDotLine[7] = yddl[i];
+
+							midDotLine[4] = xddr[i];
+							midDotLine[5] = yddr[i];
+
+							}
+						else if(midLineY3 == i){
+							midDotLine[10] = xddl[i];
+							midDotLine[11] = yddl[i];
+
+							midDotLine[8] = xddr[i];
+							midDotLine[9] = yddr[i];
+
+							}
+
+			}
+
+			DrawALine((int)mBuf[2], (int)mBuf[3], (int)mBuf[0], (int)mBuf[1], 1);
+			DrawALine((int)midDotLine[2], (int)midDotLine[3], (int)midDotLine[0], (int)midDotLine[1], 1);
+			DrawALine((int)midDotLine[6], (int)midDotLine[7], (int)midDotLine[4], (int)midDotLine[5], 1);
+			DrawALine((int)midDotLine[10], (int)midDotLine[11], (int)midDotLine[8], (int)midDotLine[9], 1);
+
+			int mA = 2;
+			int mB=-2;
+			for(int i=1; i<=dotNum;i++)
+			{
+
+				for(int x=mB;x<=mA;x++)
+				{
+					for(int y=-1;y<=0;y++)
+					{
+						if(yddr[i]>(mMinY-7*N/50)&&yddr[i]+y < maxY)
+						{
+						lcd_fig[yddr[i]+y][xddr[i]+x][0]=255;  //ï¿½ï¿½ï¿½ï¿½
+						}
+
+ 						if(yddl[i]>(mMinY-7*N/50)&&yddl[i]+y<maxY)
+ 						{
+							lcd_fig[yddl[i]+y][(xddl[i]+x)][0]=255;  //ï¿½ï¿½ï¿½ï¿½
+
+						}
+					}
+				}
+
+			}
+
+			int p =0;
+			for(int j=1;j<=height;j++)
+			{
+				for(int i=1;i<=width;i++)
+				{
+					if(lcd_fig[j-1][i][0] !=0)
+						{
+							if(isSaveFile)
+							{
+								RLBuf2[p] =i-1;
+								RLBuf2[p+1]=j-1;
+							}
+							else {
+								RLBuf[p] =i-1;
+								RLBuf[p+1]=j-1;
+							}
+						p+=2;
+						}
+				}
+			}
+			if(isSaveFile)
+				maxP2 = p;
+				else
+				maxP = p;
+			//__android_log_print(4, "BCR", "p_L :   %d\n",p);
+	return ;
+
+}
 		
 							
 
@@ -1900,8 +2332,8 @@ void CUntitled::AllFunc()
 	//LOG("allfunc");
 	init_Param();
 	   LOG("AllFunc");
-   	//Linefl();	// ÓÒ	 Ïß
-   	//Linefr();	// ×ó	 Ïß
+   	//Linefl();	// ï¿½ï¿½	 ï¿½ï¿½
+   	//Linefr();	// ï¿½ï¿½	 ï¿½ï¿½
 	DrawParkLine();	
 }
 
@@ -2193,11 +2625,11 @@ void  CUntitled::Req_RealCarParamChange( BYTE *buff,int arg, float* data, FuncPa
 void CUntitled::Test_ChangeParam_ParkLine(FuncParam funPm/*ParkLineParam lineparam,CarParam carP,CameraParam camP*/)
 {
 	ParkLineParam lineparam = funPm.parkP;
-	dotNum =lineparam.dotNum;       //  »­µãµÄ¸öÊý
-	Smax = lineparam.Smax;     //   »­Ïß×îÔ¶¾àÀë
+	dotNum =lineparam.dotNum;       //  ï¿½ï¿½ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½
+	Smax = lineparam.Smax;     //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½
 	SmaxRL = Smax + 1000;
-	start_point =80;//lineparam.start; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
-	Lstart_point = 220;//lineparam.Lstart; //  ×óÓÒ¿ªÊ¼»­ÏßµÄÎ»ÖÃ
+	start_point =80;//lineparam.start; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
+	Lstart_point = 220;//lineparam.Lstart; //  ï¿½ï¿½ï¿½Ò¿ï¿½Ê¼ï¿½ï¿½ï¿½ßµï¿½Î»ï¿½ï¿½
 	Rstart_point = 220;//lineparam.Rstart;
 
 	atsafe=lineparam.atsafe;
@@ -2213,17 +2645,17 @@ void CUntitled::Test_ChangeParam_ParkLine(FuncParam funPm/*ParkLineParam linepar
 
 	CarParam carP = funPm.carP;
 	Lcar = carP.Lc;
-	//  Wcar = 2000.0;    //   ³µ¿í
-	Wcar = carP.Wc;     //   Í£³µÎ»µÄ¿í
-	//Lsafe= carP.Lsa;           //  ³µÁ½±ß°²È«¼ä¸ô + ¡ª
+	//  Wcar = 2000.0;    //   ï¿½ï¿½ï¿½ï¿½
+	Wcar = carP.Wc;     //   Í£ï¿½ï¿½Î»ï¿½Ä¿ï¿½
+	//Lsafe= carP.Lsa;           //  ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½È«ï¿½ï¿½ï¿½ + ï¿½ï¿½
 
 	CameraParam camP = funPm.camP;
 		// P  = camP.dP;
-	  high = camP.nhigh;            //   ÉãÏñ»ú¹âÑ§ÖÐÐÄÔÚÊÀ½çË®Æ½µØÃæµÄ¸ß¶È
-	 Vision = camP.nVision;          //  ÉãÏñ»úÊÓ½Ç  
-	Pu = camP.dPu;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCDË®Æ½ Ê¹Í¼ÏñÓÒÒÆÎª+  0.01
-	Pv = camP.dPv;             //  ÉãÏñ»ú¹âÐÄÆ«ÀëCCD´¹Ö± Ê¹Í¼ÏñÉÏÒÆÎª+  0.01
-	x_angle = camP.dx_angle;        //  ÉãÏñ»úX ·½ÏòË®Æ½½Ç¶È
+	  high = camP.nhigh;            //   ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½ï¿½ï¿½ï¿½Ä¸ß¶ï¿½
+	 Vision = camP.nVision;          //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó½ï¿½  
+	Pu = camP.dPu;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDË®Æ½ Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	Pv = camP.dPv;             //  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ«ï¿½ï¿½CCDï¿½ï¿½Ö± Ê¹Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îª+  0.01
+	x_angle = camP.dx_angle;        //  ï¿½ï¿½ï¿½ï¿½ï¿½X ï¿½ï¿½ï¿½ï¿½Ë®Æ½ï¿½Ç¶ï¿½
 	y_angle = camP.dy_angle;
 	//z_angle = camP.dz_angle;
        LOG("ChangeParam");

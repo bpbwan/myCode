@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >  
+        <!-- android:background="@drawable/close_screen" -->
+        <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/close_screen"
+          android:background="#FF0000"/>
+      <TextView 
+        android:id="@+id/close_screen_text"
+        android:layout_width="150px"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="right"
+        android:paddingTop="10px"
+        android:layout_marginLeft="100px"
+        android:textSize="20sp"
+        android:text="@string/close_screen"
+        />
+
+     
+      
+    </FrameLayout>
+

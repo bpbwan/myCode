@@ -262,13 +262,13 @@ public class BackCar913Service {
 	public void set913StallState(int value) {
 		switch (value) {
 		case 0:
-			mState_913 = ProtocolState.N_STALL;
+			mState_913 = ProtocolState.P_STALL;
 			break;
 		case 1:
 			mState_913 = ProtocolState.R_STALL;
 			break;
 		case 2:
-			mState_913 = ProtocolState.P_STALL;
+			mState_913 = ProtocolState.N_STALL;
 			break;
 		case 4:
 			mState_913 = ProtocolState.D_STALL;
@@ -781,6 +781,7 @@ public class BackCar913Service {
 	private void StallDexit() {
 		mBackCarService.setBcStop(false);
 		keyCodeBackExit();
+	
 	}
 
 	public void Backcar_913_Start_ByUser() {

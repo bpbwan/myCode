@@ -4,11 +4,14 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.opengl.GLSurfaceView;
 import android.view.SurfaceHolder;
+import android.graphics.Bitmap;
 import android.graphics.PixelFormat;
 import android.util.Log;
 import android.util.AttributeSet;
+
 import com.flyaudio.backcar.trackbitmap.TrackBitmap.TrackBitmapCallbacks;
 import com.flyaudio.backcar.trackbitmap.*;
+
 import android.view.View;
 
 public class FlyGLSurfaceView extends GLSurfaceView implements
@@ -49,6 +52,7 @@ public class FlyGLSurfaceView extends GLSurfaceView implements
 		setRenderer(mTrackGLRender);
 		setRenderMode(GLSurfaceView.RENDERMODE_CONTINUOUSLY);
 
+	
 	}
 
 	public void surfaceDestroyed(SurfaceHolder holder) {
@@ -135,6 +139,10 @@ public class FlyGLSurfaceView extends GLSurfaceView implements
 	
 	public void requestSyncAngle(){
 		mTrackBitmap.requestSyncAngle();
+	}
+	
+	public Bitmap getCurrentBmp(){
+		return mTrackBitmap.getCurrentBmp();
 	}
 	
 }

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <ListPreference
+        android:entries="@array/agecontrol_entries"
+        android:entryValues="@array/agecontrol_values"
+        android:key="parentaltype"
+        android:title="@string/STR_STA_AGECONTROL" />
+
+</PreferenceScreen>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<menubar  xmlns:menubar_def="http://schemas.android.com/apk/res/com.android.launcher2">
+    
+    <shortcuts_count menubar_def:shortcount="6"/>
+  <!-- menubar -->
+    <shortcuts 
+        menubar_def:tag="001110f1"
+        menubar_def:background="@drawable/main_gps_ibt" 
+       	menubar_def:m_Text="@string/menubar_gps"
+       	menubar_def:ismenu="1"/>
+
+    <shortcuts 
+        menubar_def:tag="000400f1"
+        menubar_def:background="@drawable/main_radio_ibt" 
+       	menubar_def:m_Text="@string/menubar_radio"
+       	menubar_def:ismenu="1"/>
+            
+    <shortcuts 
+        menubar_def:tag="000b00f1"
+        menubar_def:background="@drawable/main_media_ibt" 
+       	menubar_def:m_Text="@string/menubar_media"
+       	menubar_def:ismenu="1"/>
+     <shortcuts 
+        menubar_def:tag="000900f1"
+        menubar_def:background="@drawable/main_blutooth_ibt" 
+       	menubar_def:m_Text="@string/menubar_bluetooth"
+       	menubar_def:ismenu="1"/>	
+     <shortcuts 
+        menubar_def:tag="000903f1"
+        menubar_def:background="@drawable/main_a2dp_ibt" 
+       	menubar_def:m_Text="@string/menubar_a2dp"
+       	menubar_def:ismenu="1"/> 	
+   
+    
+    <shortcuts 
+        menubar_def:tag="000000003"
+        menubar_def:background="@drawable/main_functionbox_ibt" 
+       	menubar_def:m_Text="@string/menubar_function"
+       	menubar_def:ismenu="1"/>
+    
+    
+    
+    
+    
+    <!--  box-->
+    <!-- 第一行 -->
+        <shortcuts 
+        menubar_def:tag="000a00f1"
+        menubar_def:background="@drawable/main_ipod_ibt" 
+       	menubar_def:m_Text="@string/menubar_ipod"
+       	menubar_def:ismenu="0"/>
+    <shortcuts 
+        menubar_def:tag="000803f1"
+        menubar_def:background="@drawable/main_tv_ibt" 
+       	menubar_def:m_Text="@string/menubar_tv"
+       	menubar_def:ismenu="0"/>
+    <shortcuts 
+        menubar_def:tag="000600f1"
+        menubar_def:background="@drawable/main_tpms_ibt" 
+       	menubar_def:m_Text="@string/menubar_tpms"
+       	menubar_def:ismenu="0"/>
+    <shortcuts 
+        menubar_def:tag="000201f1"
+        menubar_def:background="@drawable/main_setup_ibt" 
+       	menubar_def:m_Text="@string/menubar_setup"
+       	menubar_def:ismenu="0"/>
+    
+    <shortcuts 
+        menubar_def:tag="000c00f1"
+        menubar_def:background="@drawable/main_blcd_ibt" 
+       	menubar_def:m_Text="@string/menubar_blcd"
+       	menubar_def:ismenu="0"/>
+  
+    <shortcuts 
+        menubar_def:tag="000d00f1"
+        menubar_def:background="@drawable/main_aux_ibt" 
+       	menubar_def:m_Text="@string/menubar_aux"
+       	menubar_def:ismenu="0"/>
+  
+ 	
+    
+</menubar>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="800dp"
+    android:layout_height="600dp"
+    android:layout_gravity="center" >
+
+    <ListPreference
+        android:entries="@array/dualmono_entries"
+        android:entryValues="@array/dualmono_values"
+        android:key="dual_mono"
+        android:title="@string/dual" />
+
+    <ListPreference
+        android:entries="@array/dynamictype_entries"
+        android:entryValues="@array/dynamictype_values"
+        android:key="dual_dynamic"
+        android:title="@string/dynamic_title" />
+
+    <PreferenceScreen
+        android:key="parentaltype"
+        android:title="@string/parental" >
+    </PreferenceScreen>
+
+    <PreferenceScreen
+        android:key="dvd_password"
+        android:title="@string/STR_BTN_PASSWORDBTN" >
+    </PreferenceScreen>
+
+</PreferenceScreen>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+<COMMONCARTYPE>       
+<int name="cartypeRes" value="100" />
+</COMMONCARTYPE>
+<CARTYPE>       
+<int name="cartypeRes" value="136" />
+<int name="cartype" value="136" />
+<int name="cartype" value="830" />
+<int name="cartype" value="815" />
+</CARTYPE>
+<CARTYPE>       
+<int name="cartypeRes" value="214" />
+<int name="cartype" value="214" />
+<int name="cartype" value="215" />
+<int name="cartype" value="551" />
+</CARTYPE>
+<CARTYPE>       
+<int name="cartypeRes" value="840" />
+<int name="cartype" value="840" />
+<int name="cartype" value="802" />
+</CARTYPE>
+<CARTYPE>       
+<int name="cartypeRes" value="112" />
+<int name="cartype" value="112" />
+<int name="cartype" value="113" />
+<int name="cartype" value="114" />
+<int name="cartype" value="556" />
+</CARTYPE>
+</map>

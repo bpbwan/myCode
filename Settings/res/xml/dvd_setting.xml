@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2008 The Android Open Source Project Licensed under the 
+    Apache License, Version 2.0 (the "License"); you may not use this file except 
+    in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+    Unless required by applicable law or agreed to in writing, software distributed 
+    under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+    OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+    the specific language governing permissions and limitations under the License. -->
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="@string/STR_BTN_DVD" android:key="sound_settings"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <ListPreference android:key="displaytype"
+        android:title="@string/STR_STA_TVDISPLAYTITLE" android:entries="@array/tvformat_entries"
+        android:entryValues="@array/tvformat_values" />
+
+    <CheckBoxPreference android:key="captionstype"
+        android:title="@string/STR_STA_CAPTIONSTITLE" />
+
+    <CheckBoxPreference android:key="screensaver"
+        android:title="@string/STR_STA_SCREENSAVERTITLE" />
+
+    <CheckBoxPreference android:key="LastMem"
+        android:title="@string/STR_STA_LASTMEMTITLE" />
+
+    <com.android.settings.DialogTypePerference
+        android:key="dialogtype" android:title="@string/STR_STA_DIALOGTITLE"
+        android:dialogTitle="@string/STR_STA_DIALOGTITLE"
+        android:persistent="false" />
+        
+    <PreferenceScreen android:key="dubi"
+        android:title="@string/STR_STA_DOLBYTITLE"></PreferenceScreen>
+        
+    <PreferenceScreen android:key="early"
+        android:title="@string/STR_STA_PREFERENCETITLE"></PreferenceScreen>
+    
+    <PreferenceScreen
+        android:key="password"
+        android:title="@string/STR_BTN_PASSWORDBTN"></PreferenceScreen>
+</PreferenceScreen>

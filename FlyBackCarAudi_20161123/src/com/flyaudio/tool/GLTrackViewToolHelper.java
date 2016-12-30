@@ -64,6 +64,7 @@ public class GLTrackViewToolHelper  extends BaseToolHelper{
 				.findViewById(R.id.glsurface); // add
 		mglSView.setup(mBackCarService.proxyContext,
 			FlyUtil.GET_SCREEN_W(), FlyUtil.GET_SCREEN_H());
+		Log.d("GL", "init  ");
 		mglSView.setDraw(true);
 		mglSView.setFocusableInTouchMode(false);
 

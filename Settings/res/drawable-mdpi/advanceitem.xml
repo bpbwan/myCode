@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reverb_array">
+        <item>OFF</item>
+        <item>Living</item>
+        <item>Hall</item>
+        <item>Concert</item>
+        <item>Cave</item>
+        <item>Bathroom</item>
+        <item>Arena</item>
+    </string-array>
+    <string-array name="downmix_array">
+        <item>OFF</item>
+        <item>Lt/Rt</item>
+        <item>Stereo</item>
+    </string-array>
+    <string-array name="upmix_array">
+        <item>OFF</item>
+        <item>ON</item>
+    </string-array>
+    
+    <string-array name="prologic_array">
+        <item>OFF</item>
+        <item>Music</item>
+        <item>Movie</item>
+    </string-array>
+    <string-array name="spdifoutput_array">
+        <item>OFF</item>
+        <item>RAW</item>
+        <item>PCM</item>
+    </string-array>
+    <string-array name="testtone_array">
+        <item>OFF</item>
+        <item>Front</item>
+        <item>rear</item>
+    </string-array>
+    <string-array name="mode_array">
+        <item>Cinema</item>
+        <item>Proc</item>
+        <item>Music</item>
+        <item>Mono</item>
+        <item>LCRS</item>
+    </string-array>
+    <string-array name="fc_array">
+        <item>Front</item>
+        <item>Rear</item>
+        <item>Sub</item>
+    </string-array>
+    <string-array name="size_array">
+        <item>40Hz</item>
+        <item>60Hz</item>
+        <item>100Hz</item>
+        <item>150Hz</item>
+        <item>200Hz</item>
+        <item>250Hz</item>
+        <item>300Hz</item>
+        <item>400Hz</item>
+    </string-array>
+</resources>

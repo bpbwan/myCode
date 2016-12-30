@@ -13,6 +13,8 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Canvas;
 
@@ -29,7 +31,6 @@ import com.flyaudio.backcar.BackCarService;
 import android.view.MotionEvent;
 import android.view.KeyEvent;
 import android.view.View.OnKeyListener;
-
 import android.graphics.Rect;
 
 public class FlyRotateObj extends FlyUIObj implements View.OnClickListener,
@@ -42,6 +43,11 @@ public class FlyRotateObj extends FlyUIObj implements View.OnClickListener,
 	private float CurrentRotate = 0.0f;
 	private float perRotate = 0.0f;
 
+	private int centernX = 0;
+	private int centernY = 0;
+	private int curx = 0;
+	private int cury = 0;
+	
 	public FlyRotateObj(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
@@ -63,12 +69,13 @@ public class FlyRotateObj extends FlyUIObj implements View.OnClickListener,
 
 		this.setOnClickListener(this);
 		this.setOnKeyListener(this);
-
+		
 	}
 
 	@Override
 	public void onDraw(Canvas canvas) {
 		super.onDraw(canvas);
+		
 	}
 
 	@Override
@@ -77,6 +84,11 @@ public class FlyRotateObj extends FlyUIObj implements View.OnClickListener,
 		RotateObj();
 		if (m_bTouchable)
 			this.requestFocus();
+		int[] location = new int[2];
+		getLocationInWindow(location);
+		centernX =this.getLeft()+getMeasuredWidth()/2;
+		centernY =this.getTop()+getMeasuredHeight()/2;
+
 
 	}
 
@@ -136,6 +148,58 @@ public class FlyRotateObj extends FlyUIObj implements View.OnClickListener,
 
 	}
 
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent event) {
+		// TODO Auto-generated method stub
+		if (!m_bTouchable)
+			return false;
+		Bundle data = new Bundle();
+		switch (event.getAction()) {
+		case MotionEvent.ACTION_CANCEL:
+			Log.d("DDD", "onTouchEvent ACTION_CANCEL");
+			break;
+
+		case MotionEvent.ACTION_DOWN:
+
+			final int  curY =  (int) -(event.getRawY() - centernY);
+			final int  curX =  (int) (event.getRawX() - centernX);
+			float rot = (float) Math.atan((float)curY/curX);
+			float Degrees = Math.abs((float) Math.toDegrees(rot));
+			if(curY >= 0 &&curX >=0){ //1
+				Degrees=(270-Degrees);
+			}else if(curY >= 0 &&curX <=0){ //2
+				Degrees=(90+Degrees);
+			}else if(curY <= 0 &&curX <=0) { //3
+				Degrees = 90 - Degrees;
+			}else if(curY <= 0 &&curX >=0){ //4
+				Degrees = 270+ Degrees;
+			}
+			
+			if(Degrees <= minRotateValue){
+				CurrentRotate = minRotateValue;
+				RotateObj();
+			}else if(Degrees >= maxRotateValue){
+				CurrentRotate = maxRotateValue;
+				RotateObj();
+			}else {
+				final int p = (int) ( FlyUtil.SubBigDecimal(Degrees, minRotateValue)/ perRotate+ 1);
+				SetCurrentRotate(p);
+			}
+
+			MakeAndSendMessageToBaseModule();
+//			Log.d("TTT","rot "+Degrees);
+			break;
+		case MotionEvent.ACTION_UP:
+			break;
+		case MotionEvent.ACTION_MOVE:
+			break;
+		default:
+			break;
+		}
+		return true;
+	}
+	
 	void MakeAndSendMessageToBaseModule() {
 		Bundle data = new Bundle();
 //		Log.d("DDD", "FlyRotateObj onKey  --" + " " + CurrentRotate + "  "

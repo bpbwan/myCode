@@ -1,8 +1,10 @@
 package com.flyaudio.data;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
+import com.flyaudio.backcar.MsgType;
 import com.flyaudio.object.FlyEnumGaugeObj;
 
 public class DataObjEnumGauge extends DataObjBase {
@@ -26,7 +28,29 @@ public class DataObjEnumGauge extends DataObjBase {
 		}
 	}
 
-	public void restoreProperty(View view) {
+	public void restoreProperty(final View view) {
+//		if(!Updating){
+//			Updating = true;
+//			new Handler().postDelayed(new Runnable() {
+//				
+//				@Override
+//				public void run() {
+//					// TODO Auto-generated method stub
+//					DelayUpdateUi(view);
+//					if (!(view instanceof FlyEnumGaugeObj))
+//						return;
+//					if(m_Color != -1 )
+//						((FlyEnumGaugeObj) view).ChangeDrawableColor(m_Color);
+//					
+//					if (m_Data != -1) {
+//						((FlyEnumGaugeObj) view).setBackgroundIndex(m_Data);
+//					}
+//					Updating = false;
+//				}
+//			}, MsgType.UI_UPDATE_TIME);
+//	}
+		
+		
 		super.restoreProperty(view);
 		if (!(view instanceof FlyEnumGaugeObj))
 			return;

@@ -445,6 +445,7 @@ public abstract class BaseModule {
 			mBackCar913Service.ShowBgView(2, false);
 			break;
 		default:
+			if(mBackCarModule.getBackCarState())
 			mBackCarService.getFlyBackCarMainView().setCvbFronView();
 		}
 		// if (mBackCarService.mgetBackCarMode() == mBackCarService.BACKCAR_914)
@@ -825,7 +826,7 @@ DealBaseModuleMessages(MsgType.MSG_REMOVE, MsgType.FLOATRADAR_SHOW_DELAY, 0);
 	  	if(RightVdoStatus){
 	  		getGLTrackHelper().getGlview().setDraw(false);
 	  	}else {
-	  		getGLTrackHelper().getGlview().setDraw( getFlyBackCarMainView().isSetShowTrack());
+	  		SetTrackDraw(getFlyBackCarMainView().isSetShowTrack());
 	  	}
   }
 	
@@ -836,4 +837,9 @@ DealBaseModuleMessages(MsgType.MSG_REMOVE, MsgType.FLOATRADAR_SHOW_DELAY, 0);
 			Log.i("BackCarSer", "MSG_BACKCAR_STOPACTIVITY");
 		}
   }
+  
+  public void SetTrackDraw(boolean flag){
+	  getGLTrackHelper().getGlview().setDraw(flag);
+  }
+  
 }

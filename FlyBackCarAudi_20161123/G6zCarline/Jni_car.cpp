@@ -1,4 +1,4 @@
-//
+//author baipeibin
 #include<jni.h>
 #include<android/log.h>
 #include<stdio.h>
@@ -53,7 +53,7 @@ static pthread_t create_thread(const char* name, void (*start)(void *), void* ar
 void CUntitled::Reset(int cartype)
 {
 	carType = cartype;
-	if(carType==214 || carType == 215)  //track 模式旧的
+	if(carType==214 || carType == 215)  //track 模式锟缴碉拷
 		old_track = true;
 
 

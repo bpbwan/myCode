@@ -552,6 +552,9 @@ public class AuDiA4Module extends BaseModule {
 
 	public void Ctr_F_180Vdo_ID_method() {
 		initAudi_A4_Button();
+		DealBackCarMessages(MsgType.MSG_REMOVE,   MsgType.FRONT150VDO, null, 0);
+		DealBackCarMessages(MsgType.MSG_REMOVE,   MsgType.REAR150VDO, null, 0);
+		
 		DealBackCarMessages(MsgType.MSG_REMOVE, MsgType.SHOW_TRACKBG, null, 0);
 		mBackCarModule.showFlyButtonBg(BackCarTag.A4_F_180VIDEO_CID, (byte) 1);
 		if (mBackCarModule.isShowing913RearVideo() || needReShowVideo) {
@@ -621,6 +624,9 @@ public class AuDiA4Module extends BaseModule {
 
 	public void Ctr_R_180Vdo_ID_method() {
 		initAudi_A4_Button();
+		DealBackCarMessages(MsgType.MSG_REMOVE,   MsgType.FRONT150VDO, null, 0);
+		DealBackCarMessages(MsgType.MSG_REMOVE,   MsgType.REAR150VDO, null, 0);
+		
 		DealBackCarMessages(MsgType.MSG_REMOVE, MsgType.SHOW_TRACKBG, null, 0);
 		mBackCarModule.showFlyButtonBg(BackCarTag.A4_R_180VIDEO_CID, (byte) 1);
 		if (!mBackCarModule.isShowing913RearVideo() || needReShowVideo) {
@@ -1147,6 +1153,7 @@ public class AuDiA4Module extends BaseModule {
 					// /mBackCarModule.restTrackRunnig(); //
 					// mBackCarModule.testRadarRunning(); //
 
+	
 					break;
 
 				case BackCarTag.DigInShowMainView:
@@ -1324,7 +1331,7 @@ public class AuDiA4Module extends BaseModule {
 					mBackCar913Service.setBackGround(); // show guiji
 
 			} else if ((int) msg.what == MsgType.SHOW_TRACK) {
-				if (mBackCarService.getBackCarMode() == mBackCarService.BACKCAR_914) {
+				if (mBackCarService.mgetBackCarMode() == mBackCarService.BACKCAR_914) {
 					int trackmode = 0;
 					if (mBackCarModule.getBackCarState())
 						trackmode = FlyUtil.BACKFLAG;
@@ -1346,10 +1353,12 @@ public class AuDiA4Module extends BaseModule {
 							trackmode);
 				}
 				Log.d(TAG, "GLTrackViewToolHelper onResume");
-				GLTrackonResume();
-				if(get913CurrentVideoWay() == 1 ||get913CurrentVideoWay() == 3 )
-					getGLTrackHelper().getGlview().setDraw(false);
 				
+				if(get913CurrentVideoWay() == 1 ||get913CurrentVideoWay() == 3 ){
+					getGLTrackHelper().getGlview().setDraw(false);
+					getGLTrackHelper().getGlview().setFrameNullTime(-1);
+				}
+				GLTrackonResume();
 				Message msg2 = Message.obtain();
 				msg2.what = MsgType.REQUEST_SYNCANGLE;
 				 DealBackCarMessages(myMsgHandler ,MsgType.MSG_SENGDELAY , 0 ,
@@ -1365,10 +1374,14 @@ public class AuDiA4Module extends BaseModule {
 			} else if ((int) msg.what == MsgType.REAR150VDO) {
 				rear_150_vdo_delay();
 			}	
-			else if((int) msg.what ==MsgType.REQUEST_SYNCANGLE){
-				getGLTrackHelper().getGlview().requestSyncAngle();
-				getGLTrackHelper().getGlview().requestSyncAngle();
-				getGLTrackHelper().getGlview().requestSyncAngle();
+			else if ((int) msg.what == MsgType.REQUEST_SYNCANGLE) {
+					getGLTrackHelper().getGlview().requestSyncAngle();
+					if (mBackCarService.mIsReversing) {
+						Message t_msg = Message.obtain();
+						t_msg.what = MsgType.REQUEST_SYNCANGLE;
+						DealBackCarMessages(myMsgHandler, MsgType.MSG_SENGDELAY, 0,
+								t_msg, MsgType.REQUEST_SYNCANGLE_TIMEOUT);
+					}
 			}
 
 		}
@@ -1377,6 +1390,7 @@ public class AuDiA4Module extends BaseModule {
 	
 	protected void  Ctr_Back_Event_method(){
 	if (!mBackCarModule.getBackCarState()) {
+		Log.d("DDD", "Ctr_Back_Event_method ");
 		mBackCar913Service.keyCodeBackExit();
 		FloatRadarViewRemove();
 	}
@@ -1414,6 +1428,7 @@ public class AuDiA4Module extends BaseModule {
 
 	public void SetDraw_Track_method() {
 		boolean b = mBackCarService.getFlyBackCarMainView().isSetShowTrack();
+		Log.d("GL", "SetDraw_Track_method "+b);
 		getGLTrackHelper().getGlview().setDraw(b);
 	}
 
@@ -1699,6 +1714,7 @@ public class AuDiA4Module extends BaseModule {
 		if (mBackCarService.getReversing() && !mBackCarModule.getBackCarState()) {
 			DealBackCarMessages(MsgType.MSG_REMOVE, MsgType.GEY_FLYPAGE, null,
 					0);
+			Log.d("DDDD", "DealActivityStop  ");
 			mBackCar913Service.keyCodeBackExit();
 		}
 	}
@@ -1909,35 +1925,49 @@ public class AuDiA4Module extends BaseModule {
 	}
 
 	void initAudi_A4_F_Sound_UI(int level) {
-		switch (level) {
-		case 0:
-			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_Low,
-					(byte) 0);
-			break;
-		case 1:
-			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_Mid,
-					(byte) 0);
-			break;
-		case 2:
-			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_High,
-					(byte) 0);
-		}
+		mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_Low,
+				(byte) 0);
+		mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_Mid,
+				(byte) 0);
+		mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_High,
+				(byte) 0);
+		
+//		switch (level) {
+//		case 0:
+//			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_Low,
+//					(byte) 0);
+//			break;
+//		case 1:
+//			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_Mid,
+//					(byte) 0);
+//			break;
+//		case 2:
+//			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_FRONT_SOUND_High,
+//					(byte) 0);
+//		}
 	}
 
 	void initAudi_A4_R_Sound_UI(int level) {
-		switch (level) {
-		case 0:
-			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_Low,
-					(byte) 0);
-			break;
-		case 1:
-			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_Mid,
-					(byte) 0);
-			break;
-		case 2:
-			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_High,
-					(byte) 0);
-		}
+		mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_Low,
+				(byte) 0);
+		mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_Mid,
+				(byte) 0);
+		mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_High,
+				(byte) 0);
+	
+//		switch (level) {
+//		case 0:
+//			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_Low,
+//					(byte) 0);
+//			break;
+//		case 1:
+//			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_Mid,
+//					(byte) 0);
+//			break;
+//		case 2:
+//			mBackCarModule.showFlyButtonBg(BackCarTag.A4_AUDI_REAR_SOUND_High,
+//					(byte) 0);
+//		}
 	}
 
 	public void hideDanKuangSetting() {

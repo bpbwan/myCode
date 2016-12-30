@@ -48,6 +48,7 @@ public class SlideAnimation extends AnimationBase<SlideAnimation>{
 		this.targetView = targetView;
 		direction = Direction.DIRECTION_LEFT;
 		interpolator = new AccelerateDecelerateInterpolator();
+
 		duration = Duration.DURATION_LONG;
 		listener = null;
 		slideAnim = null;

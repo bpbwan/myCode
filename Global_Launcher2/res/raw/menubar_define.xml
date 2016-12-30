@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<menubar  xmlns:menubar_def="http://schemas.android.com/apk/res/com.android.launcher2">
+    
+    <shortcuts_count menubar_def:shortcount="4"/>
+  <!-- menubar -->
+   
+    
+    <shortcuts 
+        menubar_def:tag="000500f1"
+        menubar_def:background="@drawable/menu1" 
+       	menubar_def:m_Text="@string/menubar_dvd"
+       	menubar_def:ismenu="1"/>
+
+    
+     <shortcuts 
+        menubar_def:tag="000400f1"
+        menubar_def:background="@drawable/menu2" 
+       	menubar_def:m_Text="@string/menubar_radio"
+       	menubar_def:ismenu="1"/>
+    
+<!--填充2个空白按钮 //////////////////////////-->
+<shortcuts 
+        menubar_def:tag="000900f1"
+        menubar_def:background="@drawable/menu2" 
+       	menubar_def:m_Text="@string/menubar_bluetooth"
+       	menubar_def:ismenu="1"/>
+<shortcuts 
+        menubar_def:tag="000900f1"
+        menubar_def:background="@drawable/menu2" 
+       	menubar_def:m_Text="@string/menubar_bluetooth"
+       	menubar_def:ismenu="1"/>
+<!-- ///////////////////////////////////// -->
+
+    <shortcuts 
+        menubar_def:tag="000b00f1"
+        menubar_def:background="@drawable/menu4" 
+       	menubar_def:m_Text="@string/menubar_media"
+       	menubar_def:ismenu="1"/>
+            
+      <shortcuts 
+        menubar_def:tag="000000003"
+        menubar_def:background="@drawable/menu5" 
+       	menubar_def:m_Text="@string/menubar_function"
+       	menubar_def:ismenu="1"/> 
+    
+    
+
+   
+    
+    
+ 
+    <!--  box-->
+    <!-- 需要生成快捷方式的在这里配置    
+        menubar_def:shortcuticon="@drawable/menu_lanya"
+       	menubar_def:packagename="com.android.launcher"
+       	menubar_def:classname="com.android.launcher.Bluetooth"
+       	
+        menubar_def:screen="0"   //代表在第几屏
+       	menubar_def:x="0"   // 代表在x轴第几个
+       	menubar_def:y="0"   // 代表在y轴第几个
+       	
+       	//x=0 y=0 代表 左上角第一个格
+       	//x=1 y=0 代表 最上面一行 第二个
+       	
+       	//以上都不可以缺少
+       	///////////menubar_def:classname只能是以下的/////////////////////////////
+       	com.android.launcher.Radio  
+       	com.android.launcher.TV
+       	com.android.launcher.Tpms
+       	com.android.launcher.DrivingInfo
+       	com.android.launcher.Bluetooth
+       	com.android.launcher.DVD
+       	com.android.launcher.Media
+       	com.android.launcher.Setup
+       	com.android.launcher.A2dp
+       	com.android.launcher.Blcd
+       	com.android.launcher.Aux
+     -->   
+     
+    
+<shortcuts
+        menubar_def:tag="000900f1"
+        menubar_def:background="@drawable/main_blutooth_ibt"  
+       	menubar_def:m_Text="@string/menubar_bluetooth"
+        menubar_def:ismenu="0"/>
+
+<shortcuts
+        menubar_def:tag="000900f1"
+        menubar_def:background="@drawable/main_blutooth_ibt"  
+       	menubar_def:m_Text="@string/menubar_bluetooth"
+        menubar_def:ismenu="0"/>
+
+   
+   <shortcuts 
+        menubar_def:tag="000903f1"
+        menubar_def:background="@drawable/main_a2dp_ibt" 
+       	menubar_def:m_Text="@string/menubar_a2dp"
+       	menubar_def:ismenu="0"
+       	
+        menubar_def:shortcuticon="@drawable/menu_lanya"
+       	menubar_def:packagename="com.android.launcher"
+       	menubar_def:classname="com.android.launcher.A2dp"     	
+       	menubar_def:screen="0"
+       	menubar_def:x="0"
+       	menubar_def:y="2"
+       	/>
+   
+
+<shortcuts 
+        menubar_def:tag="000201f1"
+        menubar_def:background="@drawable/main_setup_ibt" 
+       	menubar_def:m_Text="@string/menubar_setup"
+       	menubar_def:ismenu="0"
+       	
+       	menubar_def:shortcuticon="@drawable/menu_shezhi"
+       	menubar_def:packagename="com.android.launcher"
+       	menubar_def:classname="com.android.launcher.Setup"
+       	
+       	menubar_def:screen="0"
+       	menubar_def:x="3"
+       	menubar_def:y="2"
+       	/>
+
+<shortcuts 
+        menubar_def:tag="002001f2"
+        menubar_def:background="@drawable/main_carinfo_ibt" 
+       	menubar_def:m_Text="@string/menubar_driving_info"
+       	menubar_def:ismenu="0"
+   
+       	menubar_def:shortcuticon="@drawable/menu_cheliangxinxi"
+       	menubar_def:packagename="com.android.launcher"
+       	menubar_def:classname="com.android.launcher.DrivingInfo"
+       	
+       	menubar_def:screen="0"
+       	menubar_def:x="4"
+       	menubar_def:y="2"
+       	/>
+
+
+
+ <shortcuts 
+        menubar_def:tag="001000f1"
+        menubar_def:background="@drawable/main_air_ibt" 
+       	menubar_def:m_Text="@string/menubar_air"
+       	menubar_def:ismenu="0"
+
+       	menubar_def:shortcuticon="@drawable/menu_kongtiao"
+       	menubar_def:packagename="com.android.launcher"
+       	menubar_def:classname="com.android.launcher.Air"
+       	
+       	menubar_def:screen="0"
+       	menubar_def:x="2"
+       	menubar_def:y="2"
+        />
+     <shortcuts 
+        menubar_def:tag="000600f1"
+        menubar_def:background="@drawable/main_tpms_ibt" 
+       	menubar_def:m_Text="@string/menubar_tpms"
+       	menubar_def:ismenu="0"
+       	
+       	 menubar_def:shortcuticon="@drawable/menu_taiya"
+       	menubar_def:packagename="com.android.launcher"
+       	menubar_def:classname="com.android.launcher.Tpms"     	
+       	menubar_def:screen="0"
+       	menubar_def:x="1"
+       	menubar_def:y="2"
+       	/>
+
+
+ 
+</menubar>

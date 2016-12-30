@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="app_name">ATCSetting</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="display">"Display"</string>
+    <string name="audio">"Audio   "</string>
+    <string name="dvd">"DVD       "</string>
+    <string name="divx">"Divx      "</string>
+    <string name="logo">"Logo     "</string>
+    <string name="system">"System "</string>
+
+
+    <string name="button">Set logo</string>
+    <string name="_32bits">32bits</string>
+    <string name="_16bits">16bits</string>
+    <string name="browse">Set path</string>
+    <string name="root">Path:/mnt/sdcard/tflash/image/</string>
+    <string name="logo_toastwarning">Please select contain image directory!</string>
+    
+    <string name="logo_dialogmessage">Please set the path that include logo images!</string>
+    <string name="logo_dialogtitle">Attention</string>
+    <string name="logo_savepath">Save path</string>
+    
+    
+    
+    <string name="contrast">Contrast</string>
+    <string name="hue">Hue</string>
+    <string name="saturation">Saturation</string>
+    <string name="backlight">Backlight</string>
+    
+    <string name="Audio_page">this is Audio page</string>
+    <string name="DVD_page">this is DVD page</string>
+    <string name="Divx_page">this is Divx page</string>
+    <string name="system_page">this is system page</string>
+    
+    <string name="dual">Dual Mono</string>
+    <string name="dynamic">Dynamic</string>
+    <string name="parental">Parental</string>
+    <string name="dynamic_title">Dynamic title</string>
+    
+    <string name="back">Back</string>
+    <string name="volume">Volume</string>
+    <string name="base_effect">Base Effect</string>
+    <string name="speakers">Speakers</string>
+    <string name="spk_title">SPEAKERS</string>
+    <string name="equalizer">Equalizer</string>
+    <string name="eq_title">EQUALIZER</string>
+    <string name="mix">Upmix/downmix</string>
+    <string name="advance">Advance</string>
+    
+    <string name="reset">Reset</string>
+    <string name="user">User</string>
+    <string name="pop">Pop</string>
+    <string name="live">Live</string>
+    <string name="classic">Classic</string>
+    <string name="rock">Rock</string>
+    <string name="dance">Dance</string>
+    <string name="soft">Soft</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    
+    <string name="front">Front</string>
+    <string name="rear">Rear</string>
+    <string name="gis">GIS</string>
+    <string name="backcar">BackCar</string>
+    <string name="bt_hfp">BT HFP</string>
+    
+    <string name="effect">Sound Effect</string>
+    <string name="seffect">Effect</string>
+    <string name="bass">Bass</string>
+    <string name="treble">Treble</string>
+    <string name="balance">Balance</string>
+    <string name="loudness">Loudness</string>
+    
+    <string name="center">Center</string>
+    <string name="subwoofer">Sub</string>
+    <string name="ls_rs">LS/RS</string>
+    
+    <string name="reverb">Reverb</string>
+    <string name="downmix">DownMix</string>
+    <string name="upmix">UpMix</string>
+    <string name="pro_logic">Pro Logic Ⅱ</string>
+    <string name="spdif_output">SPDIF Output</string>
+    <string name="test_tone">Test Tone</string>    
+    <string name="srs">SRS</string>
+        
+    <string name="living">Living</string>
+    <string name="hall">Hall</string>
+    <string name="concert">Concert</string>
+    <string name="arena">Arena</string>
+    <string name="cave">Cave</string>
+    <string name="bathroom">Bathroom</string>
+    <string name="lt_rt">Lt/Rt</string>
+    <string name="stereo">Stereo</string>
+    <string name="music">Music</string>
+    <string name="movie">Movie</string>
+    <string name="raw">RAW</string>
+    <string name="pcm">PCM</string>
+    
+    <string name="state">State</string>
+    <string name="trubass">Trubass</string>
+    <string name="fullband">FullBand</string>
+    <string name="phantom">Phantom</string>
+    <string name="mode">Mode</string>
+    <string name="focus">Focus</string>
+    <string name="spksize">SpkSize</string>
+    <string name="cinema">Cinema</string>
+    <string name="proc">Proc</string>
+    <string name="mono">Mono</string>
+    <string name="lcrs">LCRS</string>
+    <string name="sub">Sub</string>
+    <string name="_40hz">40Hz</string>
+    <string name="_60hz">60Hz</string>
+    <string name="_100hz">100Hz</string>
+    <string name="_150hz">150Hz</string>
+    <string name="_200hz">200Hz</string>
+    <string name="_250hz">250Hz</string>
+    <string name="_300hz">300Hz</string>
+    <string name="_400hz">400Hz</string>
+    
+    
+    
+</resources>
