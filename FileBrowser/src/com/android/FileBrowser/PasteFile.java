@@ -3,10 +3,12 @@ package com.android.FileBrowser;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+
 import android.app.Activity;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,9 +20,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/** Õ³ÌùÎÄ¼þ **/
+/** Õ³ï¿½ï¿½ï¿½Ä¼ï¿½ **/
 public class PasteFile extends ListActivity {
 	private TextView _filePath;
+	private TextView file_process;
 	private List<FileInfo> _files;
 	private String _rootPath = FileUtil.getSDPath();
 	private String _currentPath = _rootPath;
@@ -35,23 +38,25 @@ public class PasteFile extends ListActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.file_paste);
 
-		// »ñÈ¡´ÓIntent´«µÝ¹ýÀ´µÄ²ÎÊý
+		// ï¿½ï¿½È¡ï¿½ï¿½Intentï¿½ï¿½ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 		Bundle bundle = getIntent().getExtras();
 		_currentPasteFilePath = bundle.getString("CURRENTPASTEFILEPATH");
 		_action = bundle.getString("ACTION");
 
 		_filePath = (TextView) findViewById(R.id.file_path);
 
-		// °ó¶¨ÊÂ¼þ
-		((Button) findViewById(R.id.file_createdir)).setOnClickListener(fun_CreateDir);
+		file_process = (TextView) findViewById(R.id.file_process);
+		// ï¿½ï¿½ï¿½Â¼ï¿½
+		((Button) findViewById(R.id.file_createdir))
+				.setOnClickListener(fun_CreateDir);
 		((Button) findViewById(R.id.paste)).setOnClickListener(fun_Paste);
 		((Button) findViewById(R.id.cancel)).setOnClickListener(fun_Cancel);
 
-		// Ä¬ÈÏ»ñÈ¡¸ùÄ¿Â¼µÄÎÄ¼þÁÐ±í
+		// Ä¬ï¿½Ï»ï¿½È¡ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð±ï¿½
 		viewFiles(_rootPath);
 	}
 
-	/** ÐÐ±»µã»÷ÊÂ¼þ´¦Àí **/
+	/** ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ **/
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		FileInfo f = _files.get(position);
@@ -61,10 +66,10 @@ public class PasteFile extends ListActivity {
 		}
 	}
 
-	/** ÖØ¶¨Òå·µ»Ø¼üÊÂ¼þ **/
+	/** ï¿½Ø¶ï¿½ï¿½å·µï¿½Ø¼ï¿½ï¿½Â¼ï¿½ **/
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
-		// À¹½Øback°´¼ü
+		// ï¿½ï¿½ï¿½ï¿½backï¿½ï¿½ï¿½ï¿½
 		if (keyCode == KeyEvent.KEYCODE_BACK) {
 			File f = new File(_currentPath);
 			String parentPath = f.getParent();
@@ -76,25 +81,26 @@ public class PasteFile extends ListActivity {
 		return super.onKeyDown(keyCode, event);
 	}
 
-	/** »ñÈ¡¸ÃÄ¿Â¼ÏÂËùÓÐÎÄ¼þ **/
+	/** ï¿½ï¿½È¡ï¿½ï¿½Ä¿Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ **/
 	private void viewFiles(String filePath) {
-		ArrayList<FileInfo> tmp = FileActivityHelper.getFiles(PasteFile.this, filePath);
+		ArrayList<FileInfo> tmp = FileActivityHelper.getFiles(PasteFile.this,
+				filePath);
 		if (tmp != null) {
-			// Çå¿ÕÊý¾Ý
+			// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			if (_files != null) {
 				_files.clear();
 			}
 
 			_files = tmp;
-			// ÉèÖÃµ±Ç°Ä¿Â¼
+			// ï¿½ï¿½ï¿½Ãµï¿½Ç°Ä¿Â¼
 			_currentPath = filePath;
 			_filePath.setText(filePath);
-			// °ó¶¨Êý¾Ý
+			// ï¿½ï¿½ï¿½ï¿½ï¿½
 			setListAdapter(new FileAdapter(this, _files));
 		}
 	}
 
-	/** ´´½¨ÎÄ¼þ¼Ð»Øµ÷Î¯ÍÐ **/
+	/** ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½Ð»Øµï¿½Î¯ï¿½ï¿½ **/
 	private final Handler createDirHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -105,17 +111,18 @@ public class PasteFile extends ListActivity {
 
 	private Button.OnClickListener fun_CreateDir = new Button.OnClickListener() {
 		public void onClick(View v) {
-			FileActivityHelper.createDir(PasteFile.this, _currentPath, createDirHandler);
+			FileActivityHelper.createDir(PasteFile.this, _currentPath,
+					createDirHandler);
 		}
 	};
 
 	/**
-	 * ÓÃHandlerÀ´¸üÐÂUI
+	 * ï¿½ï¿½Handlerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½UI
 	 */
 	private final Handler progressHandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
-			// ¹Ø±ÕProgressDialog
+			// ï¿½Ø±ï¿½ProgressDialog
 			progressDialog.dismiss();
 
 			Intent intent = new Intent();
@@ -133,44 +140,48 @@ public class PasteFile extends ListActivity {
 
 			final File src = new File(_currentPasteFilePath);
 			if (!src.exists()) {
-				Toast.makeText(getApplicationContext(), R.string.file_notexists, Toast.LENGTH_SHORT)
-						.show();
+				Toast.makeText(getApplicationContext(),
+						R.string.file_notexists, Toast.LENGTH_SHORT).show();
 				return;
 			}
 			String newPath = FileUtil.combinPath(_currentPath, src.getName());
 			final File tar = new File(newPath);
 			if (tar.exists()) {
-				Toast.makeText(getApplicationContext(), R.string.file_exists, Toast.LENGTH_SHORT)
-						.show();
+				Toast.makeText(getApplicationContext(), R.string.file_exists,
+						Toast.LENGTH_SHORT).show();
 				return;
 			}
 
-			progressDialog = ProgressDialog.show(PasteFile.this, "", "Please wait...", true, false);
+//			progressDialog = ProgressDialog.show(PasteFile.this, "",
+//					"Please wait...", true, false);
 
-			new Thread() {
-				@Override
-				public void run() {
-					if ("MOVE".equals(_action)) { // ÒÆ¶¯ÎÄ¼þ
-						try {
-							FileUtil.moveFile(src, tar);
-						} catch (Exception ex) {
-							Log.e(TAG, getString(R.string.file_move_fail), ex);
-							Toast.makeText(getApplicationContext(), ex.getMessage(),
-									Toast.LENGTH_SHORT).show();
-						}
-					} else { // ¸´ÖÆÎÄ¼þ
-						try {
-							FileUtil.copyFile(src, tar);
-						} catch (Exception ex) {
-							Log.e(TAG, getString(R.string.file_copy_fail), ex);
-							Toast.makeText(getApplicationContext(), ex.getMessage(),
-									Toast.LENGTH_SHORT).show();
-						}
-					}
-
-					progressHandler.sendEmptyMessage(0);
-				}
-			}.start();
+			MyliterAsyncTask mt = new MyliterAsyncTask(file_process, src, tar);
+			
+			mt.execute("6666");
+//			new Thread() {
+//				@Override
+//				public void run() {
+//					if ("MOVE".equals(_action)) { // ï¿½Æ¶ï¿½ï¿½Ä¼ï¿½
+//						try {
+//							FileUtil.moveFile(src, tar);
+//						} catch (Exception ex) {
+//							Log.e(TAG, getString(R.string.file_move_fail), ex);
+//							Toast.makeText(getApplicationContext(),
+//									ex.getMessage(), Toast.LENGTH_SHORT).show();
+//						}
+//					} else { // ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+//						try {
+//							FileUtil.copyFile(src, tar);
+//						} catch (Exception ex) {
+//							Log.e(TAG, getString(R.string.file_copy_fail), ex);
+//							Toast.makeText(getApplicationContext(),
+//									ex.getMessage(), Toast.LENGTH_SHORT).show();
+//						}
+//					}
+//
+//					progressHandler.sendEmptyMessage(0);
+//				}
+//			}.start();
 		}
 	};
 
@@ -180,4 +191,78 @@ public class PasteFile extends ListActivity {
 			finish();
 		}
 	};
+
+	class MyliterAsyncTask extends AsyncTask<String, Integer, String> implements FileUtil.RefListener {
+
+		private TextView  processTv;
+		private File src;
+		private File tar;
+		
+		public MyliterAsyncTask(TextView  tv, File f1, File f2){
+			this.processTv = tv;
+			this.src = f1;
+			this.tar = f2;
+		}
+		
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			processTv.setText("onPreExecute!");
+		}
+		
+		@Override
+		protected  String doInBackground(String... arg0) {
+			// TODO Auto-generated method stub
+			FileUtil.setRefListener(this);
+			
+			if ("MOVE".equals(_action)) { // ï¿½Æ¶ï¿½ï¿½Ä¼ï¿½
+			try {
+				FileUtil.moveFile(src, tar);
+			} catch (Exception ex) {
+				Log.e(TAG, getString(R.string.file_move_fail), ex);
+				Toast.makeText(getApplicationContext(),
+						ex.getMessage(), Toast.LENGTH_SHORT).show();
+			}
+		} else { // ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½
+			try {
+				FileUtil.copyFile(src, tar);
+			} catch (Exception ex) {
+				Log.e(TAG, getString(R.string.file_copy_fail), ex);
+				Toast.makeText(getApplicationContext(),
+						ex.getMessage(), Toast.LENGTH_SHORT).show();
+			}
+		}
+			return null;
+		}
+
+		@Override
+		protected void onPostExecute(String result) {
+			// TODO Auto-generated method stub
+			super.onPostExecute(result);
+			processTv.setText("AsyncTaskDone!");
+		}
+
+		@Override
+		protected void onProgressUpdate(Integer... values) {
+			// TODO Auto-generated method stub
+			super.onProgressUpdate(values);
+			processTv.setText(""+values[0]);
+		}
+
+		@Override
+		protected void onCancelled() {
+			// TODO Auto-generated method stub
+			super.onCancelled();
+		}
+
+		@Override
+		public void publishProcess(int data) {
+			// TODO Auto-generated method stub
+			publishProgress(data);
+		}
+
+
+
+	}
 }

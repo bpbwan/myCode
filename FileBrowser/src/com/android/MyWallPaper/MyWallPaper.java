@@ -53,6 +53,8 @@ public class MyWallPaper extends WallpaperService {
 		IntentFilter  myfilter = new IntentFilter();
 		myfilter.addAction("com.android.intent.action.SETWALLPAPER");
 		registerReceiver(myReceiver, myfilter);
+		
+
 	}
 
 	@Override

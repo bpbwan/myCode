@@ -12,6 +12,9 @@
 		android:background="#ff0099FF"
 		android:padding="5dp"
 		android:textSize="15sp" />
+	
+
+	
 	<ListView
 		android:layout_below="@id/file_path"
 		android:layout_above="@+id/ll_bottom"
@@ -46,5 +49,12 @@
 				android:layout_height="wrap_content"
 				android:text="@string/cancel" />
 		</TableRow>
+					<TextView
+                android:id="@+id/file_process"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ff0099FF"
+                android:textColor="#ffffffff"
+                android:textSize="15sp" />
 	</TableLayout>
 </RelativeLayout>

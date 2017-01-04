@@ -31,30 +31,30 @@ public class IntentFactory {
 			mIntent = CreateMusic(bundle);
 		} else if (type.equals("capture")) {
 			mIntent = CreateCamera(bundle);
-		}
-		else if (type.equals("imagecrop")) {
+		} else if (type.equals("imagecrop")) {
 			mIntent = CreateImageCrop(bundle);
-		}
-		else if (type.equals("imagecrop2")) {
+		} else if (type.equals("imagecrop2")) {
 			mIntent = CreateImageCrop2(bundle);
-		}
-		else if (type.equals("wireless")) {
+		} else if (type.equals("wireless")) {
 			mIntent = CreateWireless(bundle);
-		}
-		else if (type.equals("wifisetting")) {
+		} else if (type.equals("wifisetting")) {
 			mIntent = CreateWifisetting(bundle);
 		}
-		
+
 		else if (type.equals("bluetooth")) {
 			mIntent = CreateBlueTooth(bundle);
-		}
-		else if (type.equals("local_setting")) {
+		} else if (type.equals("local_setting")) {
 			mIntent = CreateLocalSetting(bundle);
-		}
-		else if (type.equals("record")) {
+		} else if (type.equals("record")) {
 			mIntent = CreateRecord(bundle);
 		}
-
+		else if(type.equals("service")){
+			mIntent = CreateService(bundle);
+			activity.startService(mIntent);
+			return;
+		}
+		
+		
 		Log.d("AAAA", "IntentTest " + type);
 		if (mIntent != null) {
 			// activity.startActivity(mIntent);
@@ -139,22 +139,22 @@ public class IntentFactory {
 		intent.putExtra("outputFormat", "JPEG");// 返回格式
 		return intent;
 	}
-	
+
 	private static Intent CreateImageCrop2(Bundle bundle) {
-		Intent intent = new Intent("com.android.camera.action.CROP"); 
-		intent.setClassName("com.android.camera", "com.android.camera.CropImage"); 
-		intent.setData(Uri.fromFile(new File("/mnt/sdcard/PNG"))); 
+		Intent intent = new Intent("com.android.camera.action.CROP");
+		intent.setClassName("com.android.camera",
+				"com.android.camera.CropImage");
+		intent.setData(Uri.fromFile(new File("/mnt/sdcard/PNG")));
 		intent.putExtra("outputX", 1); // 剪切的宽高比为1：2
 		intent.putExtra("outputY", 2);
 		intent.putExtra("aspectX", 20); // 保存图片的宽和高
 		intent.putExtra("aspectY", 40);
 		intent.putExtra("scale", true);
-		intent.putExtra("noFaceDetection", true); 
-		intent.putExtra("output", Uri.parse("file:///mnt/sdcard/temp")); 
+		intent.putExtra("noFaceDetection", true);
+		intent.putExtra("output", Uri.parse("file:///mnt/sdcard/temp"));
 		return intent;
 	}
-	
-	
+
 	private static Intent CreateWireless(Bundle bundle) {
 
 		Intent mIntent = new Intent();
@@ -162,8 +162,7 @@ public class IntentFactory {
 
 		return mIntent;
 	}
-	
-	
+
 	private static Intent CreateWifisetting(Bundle bundle) {
 
 		Intent mIntent = new Intent();
@@ -171,8 +170,7 @@ public class IntentFactory {
 
 		return mIntent;
 	}
-	
-	
+
 	private static Intent CreateBlueTooth(Bundle bundle) {
 
 		Intent mIntent = new Intent();
@@ -180,7 +178,7 @@ public class IntentFactory {
 
 		return mIntent;
 	}
-	
+
 	private static Intent CreateLocalSetting(Bundle bundle) {
 
 		Intent mIntent = new Intent();
@@ -188,10 +186,19 @@ public class IntentFactory {
 
 		return mIntent;
 	}
-	
+
 	private static Intent CreateRecord(Bundle bundle) {
-	//打开录音机
-	Intent mIntent = new Intent(Media.RECORD_SOUND_ACTION); 
-	return mIntent;
+		// 打开录音机
+		Intent mIntent = new Intent(Media.RECORD_SOUND_ACTION);
+		return mIntent;
+	}
+
+	private static Intent CreateService(Bundle bundle) {
+		String action = "";
+		if (bundle != null)
+			action = bundle.getString("data");
+
+		Intent startService = new Intent(action);
+		return startService;
 	}
 }

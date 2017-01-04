@@ -8,22 +8,33 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.DecimalFormat;
+
 import android.os.Environment;
 
-/** ÎÄ¼þ´¦Àí¹¤¾ßÀà **/
+/** ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½ **/
 public class FileUtil {
 
-	/** »ñÈ¡SDÂ·¾¶ **/
+	private static RefListener mRefListener = null;
+	
+	public static void setRefListener(RefListener  m_RefListener){
+		mRefListener = m_RefListener;
+	}
+	
+	public interface RefListener {
+		void publishProcess(int data);
+	}
+	
+	/** ï¿½ï¿½È¡SDÂ·ï¿½ï¿½ **/
 	public static String getSDPath() {
-		// ÅÐ¶Ïsd¿¨ÊÇ·ñ´æÔÚ
+		// ï¿½Ð¶ï¿½sdï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½ï¿½
 		if (Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED)) {
-			File sdDir = Environment.getExternalStorageDirectory();// »ñÈ¡¸úÄ¿Â¼
+			File sdDir = Environment.getExternalStorageDirectory();// ï¿½ï¿½È¡ï¿½ï¿½Ä¿Â¼
 			return sdDir.getPath();
 		}
 		return "/sdcard";
 	}
 
-	/** »ñÈ¡ÎÄ¼þÐÅÏ¢ **/
+	/** ï¿½ï¿½È¡ï¿½Ä¼ï¿½ï¿½ï¿½Ï¢ **/
 	public static FileInfo getFileInfo(File f) {
 		FileInfo info = new FileInfo();
 		info.Name = f.getName();
@@ -32,7 +43,7 @@ public class FileUtil {
 		return info;
 	}
 
-	/** ¼ÆËãÎÄ¼þÄÚÈÝ **/
+	/** ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½ï¿½ï¿½ **/
 	private static void calcFileContent(FileInfo info, File f) {
 		if (f.isFile()) {
 			info.Size += f.length();
@@ -47,7 +58,7 @@ public class FileUtil {
 					} else if (tmp.isFile()) {
 						info.FileCount++;
 					}
-					if (info.FileCount + info.FolderCount >= 10000) { // ³¬¹ýÒ»Íò²»¼ÆËã
+					if (info.FileCount + info.FolderCount >= 10000) { // ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ò²»¼ï¿½ï¿½ï¿½
 						break;
 					}
 					calcFileContent(info, tmp);
@@ -56,7 +67,7 @@ public class FileUtil {
 		}
 	}
 
-	/** ×ª»»ÎÄ¼þ´óÐ¡ **/
+	/** ×ªï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½Ð¡ **/
 	public static String formetFileSize(long fileS) {
 		DecimalFormat df = new DecimalFormat("#.00");
 		String fileSizeString = "";
@@ -72,22 +83,32 @@ public class FileUtil {
 		return fileSizeString;
 	}
 
-	/** ºÏ²¢Â·¾¶ **/
+	/** ï¿½Ï²ï¿½Â·ï¿½ï¿½ **/
 	public static String combinPath(String path, String fileName) {
 		return path + (path.endsWith(File.separator) ? "" : File.separator) + fileName;
 	}
 
-	/** ¸´ÖÆÎÄ¼þ **/
+	/** ï¿½ï¿½ï¿½ï¿½ï¿½Ä¼ï¿½ **/
 	public static boolean copyFile(File src, File tar) throws Exception {
 		if (src.isFile()) {
 			InputStream is = new FileInputStream(src);
 			OutputStream op = new FileOutputStream(tar);
 			BufferedInputStream bis = new BufferedInputStream(is);
 			BufferedOutputStream bos = new BufferedOutputStream(op);
+			FileInfo  fo = FileUtil.getFileInfo(src);
+			long AllFileLength = 0;
+			long CurrentLength = 0;
+			
+			AllFileLength =fo.Size;
 			byte[] bt = new byte[1024 * 8];
 			int len = bis.read(bt);
 			while (len != -1) {
+				
 				bos.write(bt, 0, len);
+				CurrentLength+=len;
+				if(mRefListener != null){
+					mRefListener.publishProcess((int)(100*CurrentLength/AllFileLength));
+				}
 				len = bis.read(bt);
 			}
 			bis.close();
@@ -104,7 +125,7 @@ public class FileUtil {
 		return true;
 	}
 
-	/** ÒÆ¶¯ÎÄ¼þ **/
+	/** ï¿½Æ¶ï¿½ï¿½Ä¼ï¿½ **/
 	public static boolean moveFile(File src, File tar) throws Exception {
 		if (copyFile(src, tar)) {
 			deleteFile(src);
@@ -113,7 +134,7 @@ public class FileUtil {
 		return false;
 	}
 
-	/** É¾³ýÎÄ¼þ **/
+	/** É¾ï¿½ï¿½ï¿½Ä¼ï¿½ **/
 	public static void deleteFile(File f) {
 		if (f.isDirectory()) {
 			File[] files = f.listFiles();
@@ -126,7 +147,7 @@ public class FileUtil {
 		f.delete();
 	}
 
-	/** »ñÈ¡MIMEÀàÐÍ **/
+	/** ï¿½ï¿½È¡MIMEï¿½ï¿½ï¿½ï¿½ **/
 	public static String getMIMEType(String name) {
 		String type = "";
 		String end = name.substring(name.lastIndexOf(".") + 1, name.length()).toLowerCase();

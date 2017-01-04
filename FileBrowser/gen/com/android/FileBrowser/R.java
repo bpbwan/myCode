@@ -26,12 +26,13 @@ public final class R {
         public static final int file_name=0x7f070000;
         public static final int file_path=0x7f070006;
         public static final int file_position=0x7f070005;
+        public static final int file_process=0x7f07000b;
         public static final int file_size=0x7f070001;
         public static final int ll_bottom=0x7f070007;
-        public static final int mainmenu_createdir=0x7f07000d;
-        public static final int mainmenu_exit=0x7f07000e;
-        public static final int mainmenu_home=0x7f07000b;
-        public static final int mainmenu_refresh=0x7f07000c;
+        public static final int mainmenu_createdir=0x7f07000e;
+        public static final int mainmenu_exit=0x7f07000f;
+        public static final int mainmenu_home=0x7f07000c;
+        public static final int mainmenu_refresh=0x7f07000d;
         public static final int paste=0x7f070009;
     }
     public static final class layout {

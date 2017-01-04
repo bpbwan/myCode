@@ -155,9 +155,19 @@ public class Main extends ListActivity {
 			
 	//		IntentFactory.IntentTest(Main.this, "record", msg);
 			
-			setWallPaper(f.Path);
-			Main.this.finish();
+//			setWallPaper(f.Path);
+//			Main.this.finish();
 			
+		switch((int)id){
+		case 1:
+			msg.putString("data", "com.android.Service.MYSERVICE");
+			IntentFactory.IntentTest(Main.this, "service", msg);
+			break;
+		case 2:
+			msg.putString("data", "com.android.Service.SECONDSERVICE");
+			IntentFactory.IntentTest(Main.this, "service", msg);
+			break;
+		}
 			//openFile(f.Path);
 		}
 	}

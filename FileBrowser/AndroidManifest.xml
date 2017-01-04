@@ -21,7 +21,30 @@
 
         </service>
 
+	    <service 
+	        android:name="com.android.Service.MyService"
+	        android:process=":remote"
+	        >
+	        <intent-filter 
+	            >
+                <action 
+                    android:name="com.android.Service.MYSERVICE"/>
+	            <category android:name="android.intent.category.DEFAULT"/>
+	        </intent-filter>
+	    </service>
+	      
+	    	    <service 
+	        android:name="com.android.Service.SecondService"
+	        >
+	        <intent-filter 
+	            >
+                <action 
+                    android:name="com.android.Service.SECONDSERVICE"/>
+	            <category android:name="android.intent.category.DEFAULT"/>
+	        </intent-filter>
+	    </service>
 	    
+	      
 		<activity
 			android:name=".Main"
 			android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
